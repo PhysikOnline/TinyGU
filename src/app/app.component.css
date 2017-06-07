@@ -1,0 +1,46 @@
+#main-site {
+  background-color: #005EA8;
+}
+#goethe-head {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+}
+
+@media (max-width: 1024px) {
+  #goethe-head {
+    left: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  #goethe-head {
+    left: 10%;
+  }
+}
+
+
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+#footerContent{
+  color: white;
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.poweredByPO a {
+  color: white;
+  text-decoration: none;
+}
+
+.mdl-badge[data-badge]:after {
+  background-color: rgb(255,87,34);
+}
