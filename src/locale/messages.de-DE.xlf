@@ -49,7 +49,7 @@
           <context context-type="sourcefile">app/about/about.component.ts</context>
           <context context-type="linenumber">15</context>
         </context-group>
-        <note from="description" priority="1">history and about tinygu</note>
+        <note from="description" priority="1">history and about TinyGU</note>
       </trans-unit>
       <trans-unit datatype="html" id="about.content.tech">
         <source>Entwickelt wurde TinyGU als OpenSource Projekt von Physikonline. Der source code ist auf GitHub einsehbar. Zum
@@ -66,7 +66,7 @@
           <context context-type="sourcefile">app/about/about.component.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
-        <note from="description" priority="1">technical aspects of tinygu</note>
+        <note from="description" priority="1">technical aspects of TinyGU</note>
       </trans-unit>
       <trans-unit datatype="html" id="help.subheader">
         <source>Mit diesem URL shortener lassen sich ausschließlich URLs der Goethe Universität kürzen. Dazu gehören folgende Domains:</source>

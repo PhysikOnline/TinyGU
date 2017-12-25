@@ -61,6 +61,20 @@ before_script: # commands to run before the build step
 
 script: # the build step
    - ng build --prod --base-href "https://PhysikOnline.github.io/TinyGU/" --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de
+   - ng build --prod --base-href "https://physikonline.github.io/TinyGU/en/" --locale en --output-path ./dist--en-locale
+   - echo "---------------- ROOT ->"
+   - ls -lha ./
+   - echo "---------------- dist ->"
+   - ls -lha dist
+   - echo "---------------- en ->"
+   - ls -lha dist--en-locale
+   - mv dist--en-locale ./dist/en
+   - echo "---------------- ROOT ->"
+   - ls -lha ./
+   - echo "---------------- dist ->"
+   - ls -lha dist
+   - echo "---------------- dist/en ->"
+   - ls -lha dist/en
 #   - npm run build.prod
 
 before_deploy:
