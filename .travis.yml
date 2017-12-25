@@ -64,11 +64,15 @@ script: # the build step
    - ng build --prod --base-href "https://physikonline.github.io/TinyGU/en/" --locale en --output-path ./dist--en-locale
    - echo "---------------- ROOT ->"
    - ls -lha ./
+   - echo "---------------- dist ->"
+   - ls -lha dist
    - echo "---------------- en ->"
    - ls -lha dist--en-locale
    - mv dist--en-locale ./dist/en
    - echo "---------------- ROOT ->"
    - ls -lha ./
+   - echo "---------------- dist ->"
+   - ls -lha dist
    - echo "---------------- dist/en ->"
    - ls -lha dist/en
 #   - npm run build.prod
