@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
-// import {APP_BASE_HREF} from '@angular/common';
+import {APP_BASE_HREF} from '@angular/common';
 import {stringify} from 'querystring';
 import {split} from 'ts-node';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -49,8 +49,8 @@ export class AppComponent {
     console.log('href: ' + location.href);
     // $scope.location = window.location;
 
-    // console.log('stringify(APP_BASE_HREF): ' + stringify(APP_BASE_HREF));
-    console.log('stringify(HTTP_INTERCEPTORS): ' + stringify(HTTP_INTERCEPTORS));
+    console.log('stringify(APP_BASE_HREF): ' + stringify(APP_BASE_HREF));
+    // console.log('stringify(HTTP_INTERCEPTORS): ' + stringify(HTTP_INTERCEPTORS));
 
     switch (this.setLang) {
       case 'de':
@@ -59,7 +59,7 @@ export class AppComponent {
         break;
       case 'en':
         // location.href = stringify(APP_BASE_HREF) + 'en';
-        location.href = location.href.replace(location.host + '/', location.host + '/' + 'en' + '/');
+        location.href = location.href.replace(location.host + '/TinyGU', location.host + '/' + 'en' + '/TinyGU');
         console.log('REPLACE --> ' + location.href.replace(location.host + '/', location.host + '/' + 'en' + '/'));
         console.log('location.href + \'en\': ' + location.href + 'en');
         console.log('EN chosen');
@@ -70,9 +70,6 @@ export class AppComponent {
 
     console.log('href: ' + location.href);
     console.log('your language: ' + this.setLang);
-
-    // console.log('stringify(APP_BASE_HREF): ' + stringify(APP_BASE_HREF));
-    console.log('stringify(HTTP_INTERCEPTORS): ' + stringify(HTTP_INTERCEPTORS));
 
     console.log('##########  END  ##########');
   }
