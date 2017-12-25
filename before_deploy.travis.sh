@@ -7,7 +7,7 @@
 
 # SET YOUR VARIABLES!
 MY_404_TITLE="TinyGU 404 redirect page";                                          # the title of the error page
-MY_REPOSITORY_NAME="tinyGU";                                                      # name of the repository (to set the redirect link)
+MY_REPOSITORY_NAME="TinyGU";                                                      # name of the repository (to set the redirect link)
 GIST_ERROR_PAGE="https://gist.github.com/ac3121fbc85ecdedd59b440b551dd02a.git";   # the 404.html you want to use, saved as gist
 WAIT_BEFORE_REDIRECT=0
 

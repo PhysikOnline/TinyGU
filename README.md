@@ -13,45 +13,47 @@ https://github.com/boennemann/badges
 https://github.com/dwyl/repo-badges
 -->
 
-[![DEMO](https://img.shields.io/badge/DEMO-physikonline--ffm.github.io%2FtinyGU-blue.svg?style=for-the-badge)](https://physikonline-ffm.github.io/tinyGU/)
+[![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/tinyGU/)
 
 [![Angular Style Guide](https://img.shields.io/badge/Angular-Styleguide-red.svg)](https://angular.io/guide/styleguide)
-[![license](https://img.shields.io/github/license/PhysikOnline-FFM/tinyGU.svg)]()
+[![license](https://img.shields.io/github/license/PhysikOnline/TinyGU.svg)]()
 
-[![Build history](https://buildstats.info/travisci/chart/PhysikOnline-FFM/tinyGU?buildCount=100)](https://travis-ci.org/PhysikOnline-FFM/tinyGU)
+[![Build history](https://buildstats.info/travisci/chart/PhysikOnline/TinyGU?buildCount=100)](https://travis-ci.org/PhysikOnline/TinyGU)
 
-[![Travis branch](https://img.shields.io/travis/PhysikOnline-FFM/tinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline-FFM/tinyGU)
-[![Build Status](https://travis-ci.org/PhysikOnline-FFM/tinyGU.svg)](https://travis-ci.org/PhysikOnline-FFM/tinyGU) 
+[![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
+[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU) 
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/b2c6d2d1733432263fa2/maintainability)](https://codeclimate.com/github/PhysikOnline-FFM/tinyGU/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b2c6d2d1733432263fa2/test_coverage)](https://codeclimate.com/github/PhysikOnline-FFM/tinyGU/test_coverage)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/07d7c397e89040838eb276ac6fee24f6)](https://www.codacy.com/app/klezm/tinyGU?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PhysikOnline-FFM/tinyGU&amp;utm_campaign=Badge_Grade)
-[![bitHound Dependencies](https://www.bithound.io/github/PhysikOnline-FFM/tinyGU/badges/dependencies.svg)](https://www.bithound.io/github/PhysikOnline-FFM/tinyGU/master/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/PhysikOnline-FFM/tinyGU/badges/devDependencies.svg)](https://www.bithound.io/github/PhysikOnline-FFM/tinyGU/master/dependencies/npm)
-[![Coverage Status](https://coveralls.io/repos/github/PhysikOnline-FFM/tinyGU/badge.svg?branch=master)](https://coveralls.io/github/PhysikOnline-FFM/tinyGU?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/physikonline-ffm/tinygu/badge.svg)](https://snyk.io/test/github/physikonline-ffm/tinygu)
-[![dependencies Status](https://david-dm.org/PhysikOnline-FFM/tinyGU/status.svg)](https://david-dm.org/PhysikOnline-FFM/tinyGU)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8fd3dd85f8a44589b62187d11a42bf1)](https://www.codacy.com/app/klezm/PO-TinyGU?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PhysikOnline/TinyGU&amp;utm_campaign=Badge_Grade)
+[![bitHound Overall Score](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/score.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU)
+[![bitHound Dependencies](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/dependencies.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/devDependencies.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/code.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU)
+[![Coverage Status](https://coveralls.io/repos/github/PhysikOnline/TinyGU/badge.svg?branch=master)](https://coveralls.io/github/PhysikOnline/TinyGU?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/physikonline/tinygu/badge.svg)](https://snyk.io/test/github/physikonline/tinygu)
+[![dependencies Status](https://david-dm.org/PhysikOnline/TinyGU/status.svg)](https://david-dm.org/PhysikOnline/TinyGU)
 
-[![Issue Stats](http://issuestats.com/github/PhysikOnline-FFM/tinyGU/badge/issue?style=flat)](http://issuestats.com/github/PhysikOnline-FFM/tinyGU)
-[![Issue Stats](http://issuestats.com/github/PhysikOnline-FFM/tinyGU/badge/pr?style=flat)](http://issuestats.com/github/PhysikOnline-FFM/tinyGU)
+[![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/issue?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
+[![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/pr?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
 
-[![GitHub release](https://img.shields.io/github/release/PhysikOnline-FFM/tinygu/all.svg)](https://github.com/PhysikOnline-FFM/tinyGU/releases)
-[![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/PhysikOnline-FFM/tinyGU.svg?label=prerelease&nbsp;date)]()
-[![GitHub last commit](https://img.shields.io/github/last-commit/PhysikOnline-FFM/tinyGU.svg)]()
-[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PhysikOnline-FFM/tinyGU/prototype.svg?label=last&nbsp;commit&nbsp;(prototype))]()
-[![](https://img.shields.io/github/issues-raw/PhysikOnline-FFM/tinyGU.svg)]()
-[![](https://img.shields.io/github/issues-closed-raw/PhysikOnline-FFM/tinyGU.svg)]()
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/PhysikOnline-FFM/tinyGU.svg)]()
-[![GitHub top language](https://img.shields.io/github/languages/top/PhysikOnline-FFM/tinyGU.svg)]()
-[![GitHub language count](https://img.shields.io/github/languages/count/PhysikOnline-FFM/tinyGU.svg)]()
+[![GitHub release](https://img.shields.io/github/release/PhysikOnline/TinyGU/all.svg)](https://github.com/PhysikOnline/TinyGU/releases)
+[![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/PhysikOnline/TinyGU.svg?label=prerelease&nbsp;date)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU.svg)]()
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU/prototype.svg?label=last&nbsp;commit&nbsp;(prototype))]()
+[![](https://img.shields.io/github/issues-raw/PhysikOnline/TinyGU.svg)]()
+[![](https://img.shields.io/github/issues-closed-raw/PhysikOnline/TinyGU.svg)]()
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/PhysikOnline/TinyGU.svg)]()
+[![GitHub top language](https://img.shields.io/github/languages/top/PhysikOnline/TinyGU.svg)]()
+[![GitHub language count](https://img.shields.io/github/languages/count/PhysikOnline/TinyGU.svg)]()
 
 <!--
-[![Github All Releases](https://img.shields.io/github/downloads/PhysikOnline-FFM/tinygu/total.svg?label=all&nbsp;releases)](https://github.com/PhysikOnline-FFM/tinyGU/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/PhysikOnline-FFM/tinyGU.svg)]()
-[![Github commits (since latest release)](https://img.shields.io/github/commits-since/PhysikOnline-FFM/tinygu/latest.svg)]()
-[![GitHub issues](https://img.shields.io/github/issues/PhysikOnline-FFM/tinyGU.svg)](https://github.com/PhysikOnline-FFM/tinyGU/issues)
-[![Github search hit counter](https://img.shields.io/github/search/PhysikOnline-FFM/tinyGU/goto.svg)]()
-[![Github file size](https://img.shields.io/github/size/PhysikOnline-FFM/tinyGU/src/locale/messages.en-US.xlf.svg?=filesize)]()
+[![Github All Releases](https://img.shields.io/github/downloads/PhysikOnline/TinyGU/total.svg?label=all&nbsp;releases)](https://github.com/PhysikOnline/TinyGU/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/PhysikOnline/TinyGU.svg)]()
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/PhysikOnline/TinyGU/latest.svg)]()
+[![GitHub issues](https://img.shields.io/github/issues/PhysikOnline/TinyGU.svg)](https://github.com/PhysikOnline/TinyGU/issues)
+[![Github search hit counter](https://img.shields.io/github/search/PhysikOnline/TinyGU/goto.svg)]()
+[![Github file size](https://img.shields.io/github/size/PhysikOnline/TinyGU/src/locale/messages.en-US.xlf.svg?=filesize)]()
 -->
 
 ## Requirements
@@ -62,9 +64,9 @@ https://github.com/dwyl/repo-badges
 
 ## Automatic deployment on GitHub Pages
 
-[![Build Status](https://travis-ci.org/PhysikOnline-FFM/tinyGU.svg)](https://travis-ci.org/PhysikOnline-FFM/tinyGU)
+[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
 **DEMO at
-https://physikonline-ffm.github.io/tinyGU**
+https://PhysikOnline.github.io/TinyGU**
 
 via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\ ` are not built on travis.
 
@@ -93,6 +95,52 @@ Alternatively when using Webstorm, you can set up a run command. Open "edit conf
 now you can run the server by simply running the project.
 
 `ng serve --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore -p 4200`
+
+<!--
+
+when using webstorm with windows you can add these lines to your .idea/workspace.xml
+
+after "RunDashboard" and before "ShelveChangesManager"
+
+<component name="RunManager" selected="Bash.-p 4201 en">
+    <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
+      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="-p 4201 en" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.en-US.xlf --i18nFormat xlf --locale en --missingTranslation ignore" />
+      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="-p 4201" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="/k ng serve --port 4201" />
+      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Bash.-p 4201" />
+      <item index="1" class="java.lang.String" itemvalue="Bash.-p 4201 de" />
+      <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
+    </list>
+  </component>
+
+-->
 
 ### Build Angular App
 
@@ -129,9 +177,7 @@ https://docs.transifex.com/client/installing-the-client
 `tx init`
 dont change Transifex instance and get a token from https://www.transifex.com/user/settings/api/ 
 
-`tx set --auto-remote https://www.transifex.com/physikonline/tinygu`
-
-https://github.com/PhysikOnline-FFM/tinyGU/tree/master/src/locale/messages.en-US.xlf
+`tx set --auto-remote https://www.transifex.com/PhysikOnline/TinyGU`
 
 `tx push --source`
 
