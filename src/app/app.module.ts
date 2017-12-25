@@ -17,7 +17,6 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
 import { LoginReminderModalComponent } from './modal/login-reminder-modal.component';
-import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -48,11 +47,6 @@ import {APP_BASE_HREF} from '@angular/common';
   ],
   providers: [
     ApiService,
-    {
-      provide: APP_BASE_HREF, // TODO remove when i18n doesnt need two apps anymore (used for changeLang() in app.components.ts)
-      // useFactory: getBaseLocation
-      useValue: '/' + (window.location.pathname.split('/')[1] || '')
-    },
   ],
   bootstrap: [AppComponent]
 })

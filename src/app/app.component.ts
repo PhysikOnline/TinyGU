@@ -44,22 +44,31 @@ export class AppComponent {
     console.log('pathN: ' + location.pathname);
     console.log('host: ' + location.host);
     console.log('href: ' + location.href);
-    // location.hostname = location.hostname + '/en';
-    // location.href = location.href + 'en';
-    console.log('href: ' + location.href);
-    // $scope.location = window.location;
+    console.log('hash: ' + location.hash);
+    console.log('origin: ' + location.origin); // ~ const base href
 
     console.log('stringify(APP_BASE_HREF): ' + stringify(APP_BASE_HREF));
-    // console.log('stringify(HTTP_INTERCEPTORS): ' + stringify(HTTP_INTERCEPTORS));
 
     switch (this.setLang) {
       case 'de':
-        // location.href = stringify(APP_BASE_HREF);
-        console.log('DE chosen');
+        if (location.pathname.startsWith('/TinyGU/en/')) {
+          // location.href = location.origin + location.pathname.substr(3);
+          // location.href = location.href.replace(location.host + '/TinyGU', location.host + '/' + 'en' );//+ '/TinyGU');
+          location.href = location.href.replace('/en/', '');
+        } else {
+          console.log('DE already chosen');
+        }
+        console.log(location.pathname);
+        console.log('search(/^\/acc/i): ' + location.pathname.search(/^\/acc/i));
+        console.log('match(/^\/acc/i): ' + location.pathname.match(/^\/acc/i));
+        console.log('startsWith(\'/acc\'): ' + location.pathname.startsWith('/acc'));
+        console.log('startsWith(\'/en\'): ' + location.pathname.startsWith('/en'));
+        console.log('search(/^\/en\//i): ' + location.pathname.search(/^\/en\//i));
+        console.log('substr: ' + location.pathname.substr(3));
+        console.log('cpmlete string: ' + location.pathname);
         break;
       case 'en':
-        // location.href = stringify(APP_BASE_HREF) + 'en';
-        location.href = location.href.replace(location.host + '/TinyGU', location.host + '/' + 'en' + '/TinyGU');
+        location.href = location.href.replace(location.host + '/TinyGU', location.host + '/TinyGU/en');
         console.log('REPLACE --> ' + location.href.replace(location.host + '/', location.host + '/' + 'en' + '/'));
         console.log('location.href + \'en\': ' + location.href + 'en');
         console.log('EN chosen');
