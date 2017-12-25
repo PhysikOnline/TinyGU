@@ -68,7 +68,11 @@ export class AppComponent {
         console.log('cpmlete string: ' + location.pathname);
         break;
       case 'en':
-        location.href = location.href.replace(location.host + '/TinyGU', location.host + '/TinyGU/en');
+        if (!location.pathname.startsWith('/TinyGU/en/')) {
+          location.href = location.href.replace(location.host + '/TinyGU', location.host + '/TinyGU/en');
+        } else {
+          console.log('EN already chosen');
+        }
         console.log('REPLACE --> ' + location.href.replace(location.host + '/', location.host + '/' + 'en' + '/'));
         console.log('location.href + \'en\': ' + location.href + 'en');
         console.log('EN chosen');
