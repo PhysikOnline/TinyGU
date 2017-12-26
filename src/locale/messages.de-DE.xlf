@@ -4,7 +4,7 @@
     <body>
       <trans-unit datatype="html" id="app.sidenav-title">
         <source>TinyGU</source>
-        <target/>
+        <target>TinyGU</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -13,7 +13,7 @@
       </trans-unit>
       <trans-unit datatype="html" id="app.toolbar-title">
         <source>TinyGU</source>
-        <target/>
+        <target>TinyGU</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">49</context>
@@ -21,7 +21,7 @@
       </trans-unit>
       <trans-unit datatype="html" id="app.lang.english">
         <source>English</source>
-        <target/>
+        <target>Englisch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">65</context>
@@ -30,7 +30,7 @@
       </trans-unit>
       <trans-unit datatype="html" id="app.lang.german">
         <source>Deutsch</source>
-        <target/>
+        <target>Deutsch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">66</context>
