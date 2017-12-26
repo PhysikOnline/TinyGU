@@ -17,6 +17,22 @@
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="app.lang.english" datatype="html">
+        <source>English</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <note priority="1" from="description">choose english as language</note>
+      </trans-unit>
+      <trans-unit id="app.lang.german" datatype="html">
+        <source>Deutsch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note priority="1" from="description">choose german as language</note>
+      </trans-unit>
       <trans-unit id="about.title" datatype="html">
         <source>TinyGU.de   &amp;   goethe.link</source>
         <context-group purpose="location">
