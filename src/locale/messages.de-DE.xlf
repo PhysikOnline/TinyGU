@@ -39,7 +39,7 @@
       </trans-unit>
       <trans-unit datatype="html" id="about.title">
         <source><![CDATA[TinyGU.de   &   goethe.link]]></source>
-        <target><![CDATA[TinyGU.de   &   goethe.link]]></target>
+        <target><![CDATA[TinyGU.de & Goethe.Link]]></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/about/about.component.ts</context>
           <context context-type="linenumber">7</context>
