@@ -1,4 +1,25 @@
-# TinyGU
+<h1> TinyGU </h1>
+
+- [Requirements](#requirements)
+- [Continuous Integration](#continuous-integration)
+  * [Travis-CI](#travis-ci)
+  * [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
+- [Material Design](#material-design)
+  * [Color Style](#color-style)
+- [Angular CLI](#angular-cli)
+  * [Development server](#development-server)
+  * [Build Angular App](#build-angular-app)
+- [Dev](#dev)
+  * [Update Angular](#update-angular)
+  * [Versioning](#versioning)
+- [Localization](#localization)
+  * [i18n](#i18n)
+  * [Translation Tools](#translation-tools)
+  * [LingoHub](#lingohub)
+  * [Transifex](#transifex)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 <!--
 https://pandao.github.io/editor.md/en.html
@@ -12,6 +33,8 @@ https://github.com/dustinmoris/CI-BuildStats
 https://github.com/boennemann/badges
 https://github.com/dwyl/repo-badges
 -->
+
+___
 
 [![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
 
@@ -62,20 +85,21 @@ https://github.com/dwyl/repo-badges
 - https://github.com/angular/flex-layout
 - ~~https://github.com/trimox/angular-mdc-web (only for the mdc-textfield-box)~~
 
-## Automatic deployment on GitHub Pages
-
-[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
-**DEMO at
-https://PhysikOnline.github.io/TinyGU**
-
-via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\ ` are not built on travis.
-
+## Continuous Integration
+### Travis-CI
+via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\ ` are not built on travis.  
 Not set up yet but generally possible would be an integration of greenkeeper.io which automatically updates the packages for the builds at travis.
 
-## Material Color Style
+### Automatic deployment on GitHub Pages
 
-https://material.io/color/#!/?primary.color=005ea8
+[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
 
+[![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
+
+## Material Design
+### Color Style
+
+https://material.io/color/#!/?primary.color=005ea8  
 http://mcg.mbitson.com/#!?mcgpalette0=%23005ea8
 
 ## Angular CLI
@@ -96,12 +120,11 @@ now you can run the server by simply running the project.
 
 `ng serve --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore -p 4200`
 
-<!--
+<details>
+  <summary>"run" configuration for webstorm @windows</summary>
+  when using webstorm with windows you can add these lines to your .idea/workspace.xml Insert after "RunDashboard" and before "ShelveChangesManager":
 
-when using webstorm with windows you can add these lines to your .idea/workspace.xml
-
-after "RunDashboard" and before "ShelveChangesManager"
-
+```
 <component name="RunManager" selected="Bash.-p 4201 en">
     <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
@@ -139,8 +162,9 @@ after "RunDashboard" and before "ShelveChangesManager"
       <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
     </list>
   </component>
-
--->
+  </p>
+```
+</details>
 
 ### Build Angular App
 
@@ -148,7 +172,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Dev
 
-### update Angular
+### Update Angular
 to update Angular: https://angular-update-guide.firebaseapp.com/
 
 `npm outdated`, `npm update` and `npm ls --depth=0` are very handy commands  
@@ -165,29 +189,7 @@ if webpack is missing (`ng version`) install it with
 run 
 `ncu -x typescript -u -a` 
 
-### i18n
-
-to generate the source file:
-`ng xi18n --locale en-US --i18nFormat=xlf --outputPath src/locale --out-file messages.en-US.xlf` 
-
-### transifex
-
-https://docs.transifex.com/client/installing-the-client
-
-`tx init`
-dont change Transifex instance and get a token from https://www.transifex.com/user/settings/api/ 
-
-`tx set --auto-remote https://www.transifex.com/PhysikOnline/TinyGU`
-
-`tx push --source`
-
-`tx pull --all`
-
-https://docs.transifex.com/integrations/github#section-integrating-with-travis-ci
-https://sites.google.com/site/transjoomla/transifex-tutorials/start-local-project
-https://wiki.dolibarr.org/index.php/Translator_documentation
-
-### versioning
+### Versioning
 
 we use the semantic versioning for this app:
 https://docs.npmjs.com/getting-started/semantic-versioning
@@ -202,9 +204,48 @@ Semantic Version:         1.2.3-beta.1+meta
                          Minor   (Pre)release
 ```
 
-
 <!--
 <mxfile userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36" version="7.8.8" editor="www.draw.io">
     <diagram id="86b4737d-eb70-a640-dca0-72b86ba362cf" name="Page-1">5Vhdb9owFP01kbYHUGwnDjwW6LaXSpU6ac8mMYm3EGfGKWG/fjfEBkJCy9QwVMoDuj7+ujnnOLqOQ6bL8qtiefIgI5462I1Kh8wcjGkwhv8K2NQACVANxEpENXQAPIk/3ICuQQsR8VVjoJYy1SJvgqHMMh7qBsaUkuvmsIVMm7vmLOYt4ClkaRv9ISKd1OgIB3v8GxdxYndG1DzwnIW/YiWLzOznYLLY/uruJbNrmQddJSyS6wOI3DtkqqTUdbQspzytqLW01fO+nOjd5a14ps+ZQOoJzywtuM2YpjB1sspZBnFcxRZbSFgVktYbQxT9XUjbMVhtZbyDAZBBue+0q6AhHpLBnGs2hDwnSwjswpBgvXZzP4CbaeDG7ljzssITvUwBQBAqDlmw+XaAC+1cikxvzeBPHH8GCCu0rDPdTmCpiDOIU76olnrmSgvwwZ2BtcxrLkKRxd+rxmzg7VKpRvPyJPVoJyicEy7hgdUGhpgJ2DMe2Fjvm/Z67zg0Mlhy4DbrHWZMHu+W3gsNgdG6W3e/Q/cjcsGaeRWGhUo3EwXG5hVD60Ro/gSEVH1rOP1HAlTe59GupZkWsmJyMHYvxBset3mjbdpQD7QFV6LNGNYd0oAGnodG1PWoj+D49kOpj5uUEq9FqbVM35SO3rETA3I1J46v7kTjQURxMHZ92g+lxPWalCJylhOtgd9CqZXlPVqRBP6rvHVZ0euDN3SyiDi3YBh11QsP7KdUJyuEmyoFyNGLhAQt9bwLVQIIX0g9kX0U9fyjd5ZH/5963mXUe2Q6TD6GevZqeo2z11VPvv361anop0fFB58VTzlb8X+9d9XwXN2oBcavH2B6KQt01b99vH7hdh2xF27YtyQgoUfVT8cZ9vsREJr7rzPbvoMvYOT+Lw==</diagram>
 </mxfile>
 -->
+
+## Localization
+### i18n
+
+to generate the source file:
+`ng xi18n --locale en-US --i18nFormat=xlf --outputPath src/locale --out-file messages.en-US.xlf` 
+
+### Translation Tools
+
+as an alternative to transifex there are some other companies that offer free accounts for open source projects like:
+- https://applanga.com
+- https://lingohub.com (seems to be very promising since it has a github & bitbucket integration -> easiest set up!)
+- - lingohub provides a nice page with many services like theirs: https://lingohub.com/alternative-to
+- https://phraseapp.com (also offers github sync (requires `.phraseapp.yml`))
+- https://www.textunited.com
+
+### LingoHub
+We switched to LingoHub since it is very easy to use. It connects with a GitHub or Bitbucket account and pulls the 
+source automatically and offers to push the new strings to the repo directly or as PR  
+
+### Transifex
+since we switched to LingoHub we dont use Transifex anymore
+<details>
+  <summary>how to use Transifex in this project</summary>
+
+<br>
+<p><a href="https://docs.transifex.com/client/installing-the-client" rel="nofollow">install the client</a><br>
+<code>tx init</code>
+dont change Transifex instance and <a href="https://www.transifex.com/user/settings/api/" rel="nofollow">get a token</a><br>
+<code>tx set --auto-remote https://www.transifex.com/PhysikOnline/TinyGU</code><br>
+<code>tx push --source</code><br>
+<code>tx pull --all</code></p>
+<p>some useful links:</p>
+<ul>
+<li><a href="https://docs.transifex.com/integrations/github#section-integrating-with-travis-ci" rel="nofollow">https://docs.transifex.com/integrations/github#section-integrating-with-travis-ci</a></li>
+<li><a href="https://sites.google.com/site/transjoomla/transifex-tutorials/start-local-project" rel="nofollow">https://sites.google.com/site/transjoomla/transifex-tutorials/start-local-project</a></li>
+<li><a href="https://wiki.dolibarr.org/index.php/Translator_documentation" rel="nofollow">https://wiki.dolibarr.org/index.php/Translator_documentation</a></li>
+</ul>
+
+</details>
