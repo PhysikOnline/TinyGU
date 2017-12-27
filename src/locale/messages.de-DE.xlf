@@ -1,4 +1,5 @@
-<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file datatype="plaintext" original="ng2.template" source-language="en-US" target-language="de-DE">
     <body>
       <trans-unit datatype="html" id="app.sidenav-title">
@@ -18,9 +19,27 @@
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
+      <trans-unit datatype="html" id="app.lang.english">
+        <source>English</source>
+        <target>Englisch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <note from="description" priority="1">choose english as language</note>
+      </trans-unit>
+      <trans-unit datatype="html" id="app.lang.german">
+        <source>Deutsch</source>
+        <target>Deutsch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note from="description" priority="1">choose german as language</note>
+      </trans-unit>
       <trans-unit datatype="html" id="about.title">
-        <source>TinyGU.de   &amp;   goethe.link</source>
-        <target>TinyGU.de   &amp;   goethe.link</target>
+        <source><![CDATA[TinyGU.de   &   goethe.link]]></source>
+        <target><![CDATA[TinyGU.de & Goethe.Link]]></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/about/about.component.ts</context>
           <context context-type="linenumber">7</context>
