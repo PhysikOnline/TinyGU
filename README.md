@@ -126,43 +126,42 @@ now you can run the server by simply running the project.
 
 ```
 <component name="RunManager" selected="Bash.-p 4201 en">
-    <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="-p 4201 en" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.en-US.xlf --i18nFormat xlf --locale en --missingTranslation ignore" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="-p 4201" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng serve --port 4201" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Bash.-p 4201" />
-      <item index="1" class="java.lang.String" itemvalue="Bash.-p 4201 de" />
-      <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
-    </list>
-  </component>
-  </p>
+  <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <configuration name="-p 4201 en" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.en-US.xlf --i18nFormat xlf --locale en --missingTranslation ignore" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <configuration name="-p 4201" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng serve --port 4201" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <list size="3">
+    <item index="0" class="java.lang.String" itemvalue="Bash.-p 4201" />
+    <item index="1" class="java.lang.String" itemvalue="Bash.-p 4201 de" />
+    <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
+  </list>
+</component>
 ```
 </details>
 
