@@ -43,3 +43,11 @@ html, body{height:100%}
   outline: 0px;       // disables the border around an focused element
   cursor: pointer;
 }
+
+::ng-deep .langSelect div.mat-select-arrow-wrapper {
+  display: none;
+}
+
+::ng-deep .langSelect.mat-select {
+  display: inline;
+}
