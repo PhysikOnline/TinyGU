@@ -3,7 +3,7 @@ phraseapp:
   file_format: yml
   push:
       sources:
-      - file: "src/locale/messages.en-US.xlf"
+      - file: "./src/locale/messages.en-US.xlf"
     pull:
       targets:
-      - file: "src/locale/messages.<locale_name>..xlf"
+      - file: "./src/locale/messages.<locale_name>.xlf"
