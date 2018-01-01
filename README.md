@@ -198,7 +198,7 @@ http://nodesource.com/blog/semver-a-primer/
 ```
                        Major   Patch   Metadata
                           \     /         /
-Semantic Version:         1.2.3-beta.1+meta
+Semantic Version:          1.2.3-beta.1+meta
                             /      \
                          Minor   (Pre)release
 ```
@@ -218,11 +218,20 @@ to generate the source file:
 ### Translation Tools
 
 as an alternative to transifex there are some other companies that offer free accounts for open source projects like:
-- https://applanga.com
-- https://lingohub.com (seems to be very promising since it has a github & bitbucket integration -> easiest set up!)
-- - lingohub provides a nice page with many services like theirs: https://lingohub.com/alternative-to
-- https://phraseapp.com (also offers github sync (requires `.phraseapp.yml`))
-- https://www.textunited.com
+
+<details>
+  <summary>List of globalization management systems (GMS)</summary>
+    <ul>
+      <li><a href="https://applanga.com" rel="nofollow">https://applanga.com</a></li>
+      <li><a href="https://lingohub.com" rel="nofollow">https://lingohub.com</a> (seems to be very promising since it has a github & bitbucket integration -> easiest set up!)</li>
+        <ul>
+         <li>lingohub provides a nice page with many services like theirs: <a href="https://lingohub.com/alternative-to" rel="nofollow">https://lingohub.com/alternative-to</a></li>
+        </ul>
+      <li><a href="https://phraseapp.com" rel="nofollow">https://phraseapp.com</a> (also offers github sync (requires `.phraseapp.yml`))</li>
+      <li><a href="https://www.textunited.com" rel="nofollow">https://www.textunited.com</a></li>
+    </ul>
+  </summary>
+</details>
 
 ### LingoHub
 We switched to LingoHub since it is very easy to use. It connects with a GitHub or Bitbucket account and pulls the 
