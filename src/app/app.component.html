@@ -59,9 +59,17 @@
         </div>
         <div>
           <!--<button mat-icon-button (click)="easteregg = !easteregg"><mat-icon>language</mat-icon></button>-->
-          <button mat-icon-button matTooltip="Language" (click)=select.open()><mat-icon>language</mat-icon>
+
+          <button
+            mat-icon-button
+            matTooltip="Language"
+            (click)=select.open()>
+            <mat-icon>language</mat-icon>
           <!--<mat-form-field>-->
-            <mat-select #select [(ngModel)]="setLang">
+            <mat-select
+              #select
+              [(ngModel)]="setLang"
+              class="langSelect">
               <mat-option (click)="changeLang()" value="en" i18n="choose english as language@@app.lang.english">English</mat-option>
               <mat-option (click)="changeLang()" value="de" i18n="choose german as language@@app.lang.german">Deutsch</mat-option>
             </mat-select>

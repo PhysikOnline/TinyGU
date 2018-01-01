@@ -126,43 +126,42 @@ now you can run the server by simply running the project.
 
 ```
 <component name="RunManager" selected="Bash.-p 4201 en">
-    <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="-p 4201 en" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.en-US.xlf --i18nFormat xlf --locale en --missingTranslation ignore" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="-p 4201" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="/k ng serve --port 4201" />
-      <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Bash.-p 4201" />
-      <item index="1" class="java.lang.String" itemvalue="Bash.-p 4201 de" />
-      <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
-    </list>
-  </component>
-  </p>
+  <configuration name="-p 4201 de" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <configuration name="-p 4201 en" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng s -p 4201 --aot --i18nFile src/locale/messages.en-US.xlf --i18nFormat xlf --locale en --missingTranslation ignore" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <configuration name="-p 4201" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="/k ng serve --port 4201" />
+    <option name="INTERPRETER_PATH" value="C:\Windows\system32\cmd.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="" />
+    <option name="PARAMETERS" value="" />
+    <module name="" />
+    <envs />
+  </configuration>
+  <list size="3">
+    <item index="0" class="java.lang.String" itemvalue="Bash.-p 4201" />
+    <item index="1" class="java.lang.String" itemvalue="Bash.-p 4201 de" />
+    <item index="2" class="java.lang.String" itemvalue="Bash.-p 4201 en" />
+  </list>
+</component>
 ```
 </details>
 
@@ -199,7 +198,7 @@ http://nodesource.com/blog/semver-a-primer/
 ```
                        Major   Patch   Metadata
                           \     /         /
-Semantic Version:         1.2.3-beta.1+meta
+Semantic Version:          1.2.3-beta.1+meta
                             /      \
                          Minor   (Pre)release
 ```
@@ -219,11 +218,20 @@ to generate the source file:
 ### Translation Tools
 
 as an alternative to transifex there are some other companies that offer free accounts for open source projects like:
-- https://applanga.com
-- https://lingohub.com (seems to be very promising since it has a github & bitbucket integration -> easiest set up!)
-- - lingohub provides a nice page with many services like theirs: https://lingohub.com/alternative-to
-- https://phraseapp.com (also offers github sync (requires `.phraseapp.yml`))
-- https://www.textunited.com
+
+<details>
+  <summary>List of globalization management systems (GMS)</summary>
+    <ul>
+      <li><a href="https://applanga.com" rel="nofollow">https://applanga.com</a></li>
+      <li><a href="https://lingohub.com" rel="nofollow">https://lingohub.com</a> (seems to be very promising since it has a github & bitbucket integration -> easiest set up!)</li>
+        <ul>
+         <li>lingohub provides a nice page with many services like theirs: <a href="https://lingohub.com/alternative-to" rel="nofollow">https://lingohub.com/alternative-to</a></li>
+        </ul>
+      <li><a href="https://phraseapp.com" rel="nofollow">https://phraseapp.com</a> (also offers github sync (requires `.phraseapp.yml`))</li>
+      <li><a href="https://www.textunited.com" rel="nofollow">https://www.textunited.com</a></li>
+    </ul>
+  </summary>
+</details>
 
 ### LingoHub
 We switched to LingoHub since it is very easy to use. It connects with a GitHub or Bitbucket account and pulls the 
