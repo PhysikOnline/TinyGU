@@ -1,3 +1,9 @@
 phraseapp:
   project_id: 49be9b5aec71e241bcd7ed678c4d0aa5
   file_format: yml
+  push:
+      sources:
+      - file: "src/locale/messages.en-US.xlf"
+    pull:
+      targets:
+      - file: "src/locale/messages.<locale_name>..xlf"
