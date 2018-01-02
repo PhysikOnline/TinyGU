@@ -45,6 +45,7 @@ ___
 
 [![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
 [![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU) 
+[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
