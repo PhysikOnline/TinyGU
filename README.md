@@ -209,6 +209,9 @@ Semantic Version:          1.2.3-beta.1+meta
 </mxfile>
 -->
 
+We also use GitFlow Workflow
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
 ## Localization
 ### i18n
 
