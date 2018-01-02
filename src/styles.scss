@@ -9,5 +9,7 @@ $mdc-theme-secondary: #388e3c; // change secondary color example
 //@import "~@angular-mdc/theme/material";
 
 body {
+  box-sizing: border-box; // TODO: für das about fenster könnte box sizing & margin helfen...
+  margin: 0px;
   font-family: Roboto, 'Helvetica Neue', sans-serif; // TODO: style
 }
