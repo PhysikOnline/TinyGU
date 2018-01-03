@@ -39,6 +39,10 @@ html, body{height:100%}
   text-decoration: none;
 }
 
+.mat-card-footer {
+  margin: 0px;  // TODO maybe an update of flex-layout will make this obsolete
+}
+
 .no-style-button, .no-style-button:focus {
   outline: 0px;       // disables the border around an focused element
   cursor: pointer;
