@@ -45,6 +45,7 @@ ___
 
 [![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
 [![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU) 
+[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
@@ -208,6 +209,15 @@ Semantic Version:          1.2.3-beta.1+meta
     <diagram id="86b4737d-eb70-a640-dca0-72b86ba362cf" name="Page-1">5Vhdb9owFP01kbYHUGwnDjwW6LaXSpU6ac8mMYm3EGfGKWG/fjfEBkJCy9QwVMoDuj7+ujnnOLqOQ6bL8qtiefIgI5462I1Kh8wcjGkwhv8K2NQACVANxEpENXQAPIk/3ICuQQsR8VVjoJYy1SJvgqHMMh7qBsaUkuvmsIVMm7vmLOYt4ClkaRv9ISKd1OgIB3v8GxdxYndG1DzwnIW/YiWLzOznYLLY/uruJbNrmQddJSyS6wOI3DtkqqTUdbQspzytqLW01fO+nOjd5a14ps+ZQOoJzywtuM2YpjB1sspZBnFcxRZbSFgVktYbQxT9XUjbMVhtZbyDAZBBue+0q6AhHpLBnGs2hDwnSwjswpBgvXZzP4CbaeDG7ljzssITvUwBQBAqDlmw+XaAC+1cikxvzeBPHH8GCCu0rDPdTmCpiDOIU76olnrmSgvwwZ2BtcxrLkKRxd+rxmzg7VKpRvPyJPVoJyicEy7hgdUGhpgJ2DMe2Fjvm/Z67zg0Mlhy4DbrHWZMHu+W3gsNgdG6W3e/Q/cjcsGaeRWGhUo3EwXG5hVD60Ro/gSEVH1rOP1HAlTe59GupZkWsmJyMHYvxBset3mjbdpQD7QFV6LNGNYd0oAGnodG1PWoj+D49kOpj5uUEq9FqbVM35SO3rETA3I1J46v7kTjQURxMHZ92g+lxPWalCJylhOtgd9CqZXlPVqRBP6rvHVZ0euDN3SyiDi3YBh11QsP7KdUJyuEmyoFyNGLhAQt9bwLVQIIX0g9kX0U9fyjd5ZH/5963mXUe2Q6TD6GevZqeo2z11VPvv361anop0fFB58VTzlb8X+9d9XwXN2oBcavH2B6KQt01b99vH7hdh2xF27YtyQgoUfVT8cZ9vsREJr7rzPbvoMvYOT+Lw==</diagram>
 </mxfile>
 -->
+
+We also use GitFlow Workflow
+
+<details>
+  <summary>Links</summary>
+    https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+    https://danielkummer.github.io/git-flow-cheatsheet/
+    https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/
+</details>
 
 ## Localization
 ### i18n
