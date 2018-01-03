@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'tinygu-staging-api.physikelearning.de',
+  apiURL: 'https://tinygu-staging-api.physikelearning.de',
 };
