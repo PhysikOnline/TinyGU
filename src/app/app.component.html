@@ -15,9 +15,9 @@
          [routerLink]="['/']"
          (click)="start.close()"
          class="no-style-button"
-         style="padding: 0px 2em;">{{ TinyGU | titleSetter }}</p>
-         <!--i18n="TinyGU - the title of the app@@app.sidenav-title">TinyGU</p>-->
-         <!--style="padding: 0px 2em;">TinyGU</p>-->
+         style="padding: 0px 2em;">TinyGU</p>
+         <!--i 1 8 n="TinyGU - the title of the app@@app.sidenav-title">{{ TinyGU | titleSetter }}</p>-->
+         <!--style="padding: 0px 2em;">{{ TinyGU | titleSetter }}</p>-->
 
       <a *ngFor="let navItem of navItems"
          mat-list-item
@@ -45,11 +45,10 @@
             <mat-icon>menu</mat-icon>
           </button>
 
-          <!--<span i18n="@@app.toolbar-title"-->
+          <!--<span i 1 8 n="@@app.toolbar-title"-->
           <span class="no-style-button"
-                [routerLink]="['/']">{{ TinyGU | titleSetter }}</span>
-                <!--[routerLink]="['/']">TinyGU</span>-->
-                <!--[routerLink]="['/']">TinyGU</span>-->
+                [routerLink]="['/']">TinyGU</span>
+                <!--[routerLink]="['/']">{{ TinyGU | titleSetter }}</span>-->
         </div>
 
         <div fxFlex="1 1 auto"></div>
