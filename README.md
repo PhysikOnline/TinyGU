@@ -86,7 +86,7 @@ ___
 - https://github.com/angular/flex-layout
 - ~~https://github.com/trimox/angular-mdc-web (only for the mdc-textfield-box)~~
 
-## Continuous Integration
+## Continuous Integration & Deployment
 ### Travis-CI
 via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\ ` are not built on travis.  
 Not set up yet but generally possible would be an integration of greenkeeper.io which automatically updates the packages for the builds at travis.
@@ -96,6 +96,19 @@ Not set up yet but generally possible would be an integration of greenkeeper.io 
 [![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
 
 [![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
+
+### Heroku
+<details>
+  <summary>Links</summary>
+    <a href="https://github.com/heroku/heroku-buildpack-nginx">https://github.com/heroku/heroku-buildpack-nginx</a><br>
+    <a href="https://github.com/heroku/heroku-buildpack-nginx">https://github.com/heroku/heroku-buildpack-nginx</a><br>
+    <a href="https://github.com/heroku/heroku-buildpack-static">https://github.com/heroku/heroku-buildpack-static</a><br>
+    <a href="https://m.alphasights.com/using-nginx-on-heroku-to-serve-single-page-apps-and-avoid-cors-5d013b171a45">https://m.alphasights.com/using-nginx-on-heroku-to-serve-single-page-apps-and-avoid-cors-5d013b171a45</a><br>
+    <a href="http://www.broculos.net/2015/12/dokku-deploying-static-html-site.html">http://www.broculos.net/2015/12/dokku-deploying-static-html-site.html</a><br>
+    <a href=""></a><br>
+</details>
+
+### Dokku
 
 ## Material Design
 ### Color Style
@@ -217,6 +230,7 @@ We also use GitFlow Workflow
     <a href="https://danielkummer.github.io/git-flow-cheatsheet/">https://danielkummer.github.io/git-flow-cheatsheet/</a><br>
     <a href="https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/">https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/</a><br>
     <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a><br>
+    <a href=""></a><br>
 </details>
 
 ## Localization
