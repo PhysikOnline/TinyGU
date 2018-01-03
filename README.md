@@ -214,9 +214,9 @@ We also use GitFlow Workflow
 
 <details>
   <summary>Links</summary>
-    https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-    https://danielkummer.github.io/git-flow-cheatsheet/
-    https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/
+    <a href="https://danielkummer.github.io/git-flow-cheatsheet/">https://danielkummer.github.io/git-flow-cheatsheet/</a><br>
+    <a href="https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/">https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/</a><br>
+    <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a><br>
 </details>
 
 ## Localization
