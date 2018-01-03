@@ -18,7 +18,6 @@ export class AppComponent {
   userLang = '';
   setLang: string;
 
-
   navItems = [
     { name: 'About', route: '/about' },
     { name: 'Account', route: '/account' },
