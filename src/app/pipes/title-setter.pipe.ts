@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TitleSetterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: string): string {
     if (location.pathname.includes('tinygu.de')) {
       return 'TinyGU'; // return value;
     }
@@ -13,8 +13,9 @@ export class TitleSetterPipe implements PipeTransform {
     if (location.pathname.includes('goethe.link')) {
       return 'Goethe.Link'; // 🔗 &#128279; &#x1F517; http://graphemica.com/%F0%9F%94%97
     } else {
+      return value;
+      // return 'Goethe.Link';
       // return '404';
-      return 'Goethe.Link';
     }
   }
 

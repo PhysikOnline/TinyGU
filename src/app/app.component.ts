@@ -4,6 +4,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {stringify} from 'querystring';
 import {split} from 'ts-node';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {Meta} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,35 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+  // constructor(public dialog: MatDialog, private meta: Meta) {
+  //   console.log('·········································');
+  //   this.meta.addTag({ name: 'test', content: 'test 1' });
+  //   // or many at once:
+  //   this.meta.addTags([
+  //     { name: 'test', content: 'test 2' },
+  //     { name: 'test', content: 'test 3' },
+  //     ]);
+  //
+  //   // only gets the first occurrence if the attribute is used multiple times
+  //   console.log('tag: ' + this.meta.getTag('name=test').content);
+  //   // gets the outer html
+  //   this.meta.getTags('name="test"').forEach(value => console.log('html:', value));
+  //   // gets the values
+  //   this.meta.getTags('name="test"').forEach(value => console.log('content: ' + value.content));
+  //   // gets the object
+  //   console.log('object: ', this.meta.getTags('name="test"'));
+  //
+  //   // only updates the first occurrence!
+  //   this.meta.updateTag({name: 'test', content: 'abc'});
+  //
+  //   // only deletes the first occurrence
+  //   this.meta.removeTag('name="test"');
+  //   // does the same as above but takes an `HTMLTagElement`instead of an attribute selector
+  //   this.meta.removeTagElement(this.meta.getTag('name=test'));
+  //
+  //   console.log('·········································');
+  }
 
   title = 'TinyGU';
   easteregg = false;
