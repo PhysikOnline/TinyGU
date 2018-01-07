@@ -17,6 +17,7 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
 import { LoginReminderModalComponent } from './modal/login-reminder-modal.component';
+import { TitleSetterPipe } from './pipes/title-setter.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginReminderModalComponent } from './modal/login-reminder-modal.compon
     HttpResponseModalComponent,
     HelpModalComponent,
     LoginReminderModalComponent,
+    TitleSetterPipe,
   ],
   imports: [
     BrowserModule,

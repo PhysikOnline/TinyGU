@@ -9,14 +9,19 @@
 
     <mat-nav-list class="mat-nav-list">
 
+      <div hidden #test i18n="@@yes0" name="@@yes0">Yes0</div>
+      <div hidden #test i18n="@@yes1" name="@@yes1">Yes1</div>
+      <div hidden #test i18n="@@yes2" name="@@yes2">Yes2</div>
+
       <!--TODO inline style-->
       <p mat-card-title
          routerLink
          [routerLink]="['/']"
          (click)="start.close()"
          class="no-style-button"
-         style="padding: 0px 2em;"
-         i18n="#TinyGU# the title of the app@@app.sidenav-title">TinyGU</p>
+         style="padding: 0px 2em;">{{ 'TinyGU' | titleSetter }}</p>
+         <!--style="padding: 0px 2em;">TinyGU</p>-->
+         <!--i 1 8 n="TinyGU - the title of the app@@app.sidenav-title">{{ TinyGU | titleSetter }}</p>-->
 
       <a *ngFor="let navItem of navItems"
          mat-list-item
@@ -44,9 +49,10 @@
             <mat-icon>menu</mat-icon>
           </button>
 
-          <span i18n="@@app.toolbar-title"
-                class="no-style-button"
-                [routerLink]="['/']">TinyGU</span>
+          <!--<span i 1 8 n="@@app.toolbar-title"-->
+          <span class="no-style-button"
+                [routerLink]="['/']">{{ 'TinyGU' | titleSetter }}</span>
+                <!--[routerLink]="['/']">TinyGU</span>-->
         </div>
 
         <div fxFlex="1 1 auto"></div>
