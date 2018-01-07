@@ -14,9 +14,11 @@
                         class="input-box"
                         style="width: 100%"> <!--TODO remove inline style-->
           <!--TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2-->
+          <!--TODO remove value property-->
           <!--<div>-->
             <input matInput
                    placeholder="http://example.uni-frankfurt.de/..."
+                   value="www.uni-frankfurt.de/"
                    [(ngModel)]="inputURL"
                    [formControl]="urlFormControl">
             <!--<mat-icon matSuffix>info</mat-icon>-->

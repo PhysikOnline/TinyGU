@@ -33,10 +33,11 @@ export class ShortenerComponent implements OnInit {
   moreOptions = false;
   inputURL = '';
   shortURL = '';
-  loggedInVar = false;
+  loggedInVar = true; // TODO set false
 
   urlFormControl = new FormControl('', [Validators.pattern(URL_REGEX), Validators.pattern(GOETHE_URL_REGEX)]);
   // urlFormControl = new FormControl('inputURL', [Validators.pattern(URL_REGEX), Validators.pattern(GOETHE_URL_REGEX)]);
+  // TODO update shorturl check
   shortUrlFormControl = new FormControl('', Validators.minLength(2));
 
   ngOnInit() {
@@ -45,6 +46,8 @@ export class ShortenerComponent implements OnInit {
   onShorten() {
     console.log('urlFormControl -->', !this.urlFormControl.hasError('pattern'), '###################');
     console.log('shortUrlFormControl -->', !this.shortUrlFormControl.hasError('minlength'), '###################');
+    // if the input fields pass the regex checks
+    // TODO update shorturl check
     if (!this.urlFormControl.hasError('pattern') && !this.shortUrlFormControl.hasError('minlength')) {
       const link = new Link( this.inputURL, this.shortURL, null, null, null );
       let successMessage: string[]; // or any[] to process date?
@@ -62,14 +65,14 @@ export class ShortenerComponent implements OnInit {
               console.log('onNext---->>>>>>>>>>>>>>>>>>>>');
               console.log(data);
               console.log(data.shortUrl);
-              successMessage = [data.longUrl, data.shortUrl, (data.owner ? '1' : '0'), data.dateCreated];
+              // successMessage = [data.longUrl, data.shortUrl, (data.owner ? '1' : '0'), data.dateCreated]; // to much data
+              successMessage = [data.longUrl, data.shortUrl];
               console.log('<<<<<<<<<<<<<<<<<<<<----onNext');
             },
             err => {
               console.log('ERROR---->>>>>>>>>>>>>>>>>>>>');
               console.error(err); // whole error; "err.error.error" -> actual error message; "err.message" -> generated error message
               console.error(err.error.error);
-              // this.dialog.open(LoginReminderModalComponent);
               this.dialog.open(HttpResponseModalComponent, {data: {errorMessage: err.error.error}});
               console.log('<<<<<<<<<<<<<<<<<<<<----ERROR');
             },
@@ -84,7 +87,7 @@ export class ShortenerComponent implements OnInit {
               console.log('<<<<<<<<<<<<<<<<<<<<----complete');
             }
            );
-      // if (!this.loggedInVar) this.dialog.open( LoginReminderModalComponent );
+      if (!this.loggedInVar) { this.dialog.open( LoginReminderModalComponent ); }
     } else {
       // TODO input or inputError blinking, vibrating, animation....
     }
@@ -97,19 +100,3 @@ export class ShortenerComponent implements OnInit {
   }
 
 }
-
-// // TODO export to modal folder
-// @Component({
-//   selector: 'app-login-reminder-dialog',
-//   template: `
-//   <h2 mat-dialog-title>Create an account</h2>
-//   <mat-dialog-content>Do you want to create an account, so you can edit, delete and change the link you create?</mat-dialog-content>
-//   <mat-dialog-actions>
-//     <button mat-button mat-dialog-close>No</button>
-//     <!-- Can optionally provide a result for the closing dialog. -->
-//     <button mat-button [mat-dialog-close]="true">Yes</button>
-//   </mat-dialog-actions>`,
-//   styleUrls: ['./shortener.component.scss']
-// })
-// export class LoginReminderDialogComponent {
-// }

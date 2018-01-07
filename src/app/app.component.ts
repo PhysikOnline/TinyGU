@@ -136,6 +136,7 @@ export class AppComponent {
 }
 
 // TODO export -> modal
+// TODO best praxis? one modal and fill with routes or a modal each?
 @Component({
   selector: 'app-login-reminder-dialog',
   template: `

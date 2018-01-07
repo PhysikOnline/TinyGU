@@ -1,17 +1,25 @@
-<p>
-  data.errorMessage {{data.errorMessage ? '&#x2757;' : '&#x2705;'}}: <br><br>
-  {{data.errorMessage}}
-  data.completeMessage {{data.completeMessage ? '&#x2757;' : '&#x2705;'}}: <br>
-  {{data.completeMessage}}
-</p>
-
-<div *ngIf="data.completeMessage">
-  <ng-container i18n="link create success message@@httpModal.successMsg">your link was created :)</ng-container>
-  <br><br>
-  long: {{data.completeMessage[0]}}<br>
-  short: {{data.completeMessage[1]}}<br>
-  connected to account?: {{(data.completeMessage[2] == '1') ? 'yes' : 'no'}}<br>
-  time: {{data.completeMessage[3].substring(0,10)}}<br>
+<div *ngIf="!data.completeMessage">
+  <p>
+    <!--data.errorMessage {{data.errorMessage ? '&#x2757;' : '&#x2705;'}}: <br><br> {{data.errorMessage}}-->
+    There was an Error.
+  </p>
 </div>
 
-<p>end</p>
+<div *ngIf="data.completeMessage">
+  <!--data.completeMessage {{data.completeMessage ? '&#x2757;' : '&#x2705;'}}: <br> {{data.completeMessage}}-->
+
+  <ng-container i18n="link create success message@@httpModal.successMsg">your link was created :)</ng-container>
+  <br><br>
+  <!-- TODO change href (i18n??)-->
+  <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{data.completeMessage[1]}}">
+    goethe.link/{{data.completeMessage[1]}}
+  </a><br>
+  redirects to
+  <a href="{{data.completeMessage[0]}}" style="font-size: x-small;">{{data.completeMessage[0]}}</a> <!--TODO inline css-->
+  <!--connected to account?: {{(data.completeMessage[2] == '1') ? 'yes' : 'no'}}<br>-->
+  <!--time: {{data.completeMessage[3].substring(0,10)}}<br>-->
+</div>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>OK</button>
+</mat-dialog-actions>
