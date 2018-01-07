@@ -14,8 +14,12 @@
   <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{data.completeMessage[1]}}">
     goethe.link/{{data.completeMessage[1]}}
   </a><br>
-  redirects to
-  <a href="{{data.completeMessage[0]}}" style="font-size: x-small;">{{data.completeMessage[0]}}</a> <!--TODO inline css-->
+  <span style="font-size: small;"> <!--TODO inline css-->
+    redirects to
+    <a href="{{data.completeMessage[0]}}">
+      {{data.completeMessage[0]}}
+    </a>
+  </span>
   <!--connected to account?: {{(data.completeMessage[2] == '1') ? 'yes' : 'no'}}<br>-->
   <!--time: {{data.completeMessage[3].substring(0,10)}}<br>-->
 </div>
