@@ -13,7 +13,8 @@ export class TitleSetterPipe implements PipeTransform {
     if (location.pathname.includes('goethe.link')) {
       return 'Goethe.Link'; // 🔗 &#128279; &#x1F517; http://graphemica.com/%F0%9F%94%97
     } else {
-      return '404';
+      // return '404';
+      return 'Goethe.Link';
     }
   }
 
