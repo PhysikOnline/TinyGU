@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChildren} from '@angular/core';
 import { MatDialog } from '@angular/material';
 import {APP_BASE_HREF} from '@angular/common';
 import {stringify} from 'querystring';
 import {split} from 'ts-node';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {Meta} from '@angular/platform-browser';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import {Meta} from '@angular/platform-browser';
 })
 export class AppComponent {
   constructor(public dialog: MatDialog) {
-  // constructor(public dialog: MatDialog, private meta: Meta) {
+  // constructor(public dialog: MatDialog, private meta: Meta, private elRef: ElementRef) {
   //   console.log('·········································');
   //   this.meta.addTag({ name: 'test', content: 'test 1' });
   //   // or many at once:
@@ -52,6 +53,19 @@ export class AppComponent {
     { name: 'Account', route: '/account' },
     { name: 'Help', route: '/help' },
   ];
+
+  // // @ViewChild('test') myChild: ElementRef;
+  // @ViewChildren('test') myChildren; // the class needs to implement AfterViewInit
+  // myMap = new Map();
+  // ngAfterViewInit() {
+  //   console.log('·········································');
+  //   // needs:   constructor(private elRef: ElementRef) {
+  //   // console.log(this.elRef.nativeElement.querySelector('.test0').innerHTML);
+  //
+  //   this.myChildren.forEach(value => this.myMap.set(value.nativeElement.getAttribute('name'), value.nativeElement.innerHTML));
+  //   console.log(this.myMap);
+  //   console.log('·········································');
+  // }
 
   // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
   // https://stackoverflow.com/questions/36914151/browser-language-detection
