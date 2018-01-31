@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent, HelpModalComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { AccountComponent } from './account/account.component';
 import { HelpComponent } from './help/help.component';
 import { routing } from './app.routing';
-import { ShortenerComponent} from './shortener/shortener.component';
+import { ShortenerComponent } from './shortener/shortener.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material';
@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
 import { LoginReminderModalComponent } from './modal/login-reminder-modal.component';
 import { TitleSetterPipe } from './pipes/title-setter.pipe';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -41,15 +42,14 @@ import { TitleSetterPipe } from './pipes/title-setter.pipe';
     routing,
     MatDialogModule,
     HttpClientModule,
+    ComponentsModule,
   ],
   entryComponents: [
     HttpResponseModalComponent,
     HelpModalComponent,
     LoginReminderModalComponent,
   ],
-  providers: [
-    ApiService,
-  ],
-  bootstrap: [AppComponent]
+  providers: [ApiService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
