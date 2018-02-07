@@ -17,6 +17,7 @@ export class ToolbarComponent implements OnInit {
 
   constructor(private dialog: MatDialog) {}
 
+  // test
   ngOnInit() {}
 
   onSideNavOpen(type?: string) {
