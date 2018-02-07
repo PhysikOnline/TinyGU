@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --env=prod",
-//    "build_dokku_de": "ng build --prod --env=prod --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de",
+    "build_dokku_de_i18n": "ng build --prod --env=prod --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de",
     "build_dokku_de": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
