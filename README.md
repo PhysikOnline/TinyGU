@@ -1,29 +1,41 @@
-<h1> TinyGU </h1>
+<!-- 
+
+https://github.com/neilsustc/vscode-markdown
+
+settings:
+{
+    "markdown.extension.preview.autoShowPreviewToSide": true,
+    "markdown.extension.toc.updateOnSave": true
+    "markdown.extension.toc.levels": "2..6"
+}
+
+-->
+
+# TinyGU
+
+<!-- generate a TOC from the markdown code online: http://ecotrust-canada.github.io/markdown-toc/ -->
 
 - [Requirements](#requirements)
 - [Continuous Integration](#continuous-integration)
-  * [Travis-CI](#travis-ci)
-  * [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
+  - [Travis-CI](#travis-ci)
+  - [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
 - [Material Design](#material-design)
-  * [Color Style](#color-style)
+  - [Color Style](#color-style)
 - [Angular CLI](#angular-cli)
-  * [Development server](#development-server)
-  * [Build Angular App](#build-angular-app)
+  - [Development server](#development-server)
+  - [Build Angular App](#build-angular-app)
 - [Dev](#dev)
-  * [Update Angular](#update-angular)
-  * [Versioning](#versioning)
+  - [Update Angular](#update-angular)
+  - [Versioning](#versioning)
+  - [yarn](#yarn)
 - [Localization](#localization)
-  * [i18n](#i18n)
-  * [Translation Tools](#translation-tools)
-  * [LingoHub](#lingohub)
-  * [Transifex](#transifex)
+  - [i18n](#i18n)
+  - [Translation Tools](#translation-tools)
+  - [LingoHub](#lingohub)
+  - [Transifex](#transifex)
+___
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-<!--
-https://pandao.github.io/editor.md/en.html
--->
+<!-- https://pandao.github.io/editor.md/en.html -->
 
 <!--
 https://badges.github.io/gh-badges/
@@ -34,19 +46,19 @@ https://github.com/boennemann/badges
 https://github.com/dwyl/repo-badges
 -->
 
-___
-
 [![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
 
-[![Angular Style Guide](https://img.shields.io/badge/Angular-Styleguide-red.svg)](https://angular.io/guide/styleguide)
+<!-- [![Angular Style Guide](https://img.shields.io/badge/Angular-Styleguide-red.svg)](https://angular.io/guide/styleguide) -->
+[![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 [![license](https://img.shields.io/github/license/PhysikOnline/TinyGU.svg)]()
 
+Builds:
+[![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
+[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
+[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
 [![Build history](https://buildstats.info/travisci/chart/PhysikOnline/TinyGU?buildCount=100)](https://travis-ci.org/PhysikOnline/TinyGU)
 
-[![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
-[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU) 
-[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
-
+Code
 [![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8fd3dd85f8a44589b62187d11a42bf1)](https://www.codacy.com/app/klezm/PO-TinyGU?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PhysikOnline/TinyGU&amp;utm_campaign=Badge_Grade)
@@ -57,6 +69,7 @@ ___
 [![Coverage Status](https://coveralls.io/repos/github/PhysikOnline/TinyGU/badge.svg?branch=master)](https://coveralls.io/github/PhysikOnline/TinyGU?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/physikonline/tinygu/badge.svg)](https://snyk.io/test/github/physikonline/tinygu)
 [![dependencies Status](https://david-dm.org/PhysikOnline/TinyGU/status.svg)](https://david-dm.org/PhysikOnline/TinyGU)
+[![codecov](https://codecov.io/gh/PhysikOnline/TinyGU/branch/master/graph/badge.svg)](https://codecov.io/gh/PhysikOnline/TinyGU)
 
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/issue?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/pr?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
@@ -64,12 +77,12 @@ ___
 [![GitHub release](https://img.shields.io/github/release/PhysikOnline/TinyGU/all.svg)](https://github.com/PhysikOnline/TinyGU/releases)
 [![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/PhysikOnline/TinyGU.svg?label=prerelease&nbsp;date)]()
 [![GitHub last commit](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU.svg)]()
-[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU/prototype.svg?label=last&nbsp;commit&nbsp;(prototype))]()
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU/master.svg?label=last&nbsp;commit&nbsp;(master))]()
 [![](https://img.shields.io/github/issues-raw/PhysikOnline/TinyGU.svg)]()
 [![](https://img.shields.io/github/issues-closed-raw/PhysikOnline/TinyGU.svg)]()
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/PhysikOnline/TinyGU.svg)]()
 [![GitHub top language](https://img.shields.io/github/languages/top/PhysikOnline/TinyGU.svg)]()
-[![GitHub language count](https://img.shields.io/github/languages/count/PhysikOnline/TinyGU.svg)]()
+[![GitHub language count](https://img.shields.io/github/languages /count/PhysikOnline/TinyGU.svg)]()
 
 <!--
 [![Github All Releases](https://img.shields.io/github/downloads/PhysikOnline/TinyGU/total.svg?label=all&nbsp;releases)](https://github.com/PhysikOnline/TinyGU/releases)
@@ -175,7 +188,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Update Angular
 to update Angular: https://angular-update-guide.firebaseapp.com/
 
-`npm outdated`, `npm update` and `npm ls --depth=0` are very handy commands  
+`yarn outdated`, `yarn upgrade` and `yarn ls --depth=0` are very handy commands  
 
 replace the version number `@'^5.0.0'` with `@latest` and probably add --save to the end of the command.
 On windows run cmd as admin!
@@ -191,9 +204,10 @@ run
 
 ### Versioning
 
-we use the semantic versioning for this app:
-https://docs.npmjs.com/getting-started/semantic-versioning
-http://nodesource.com/blog/semver-a-primer/
+we use the semantic versioning for this app:   
+https://docs.npmjs.com/getting-started/semantic-versioning  
+http://nodesource.com/blog/semver-a-primer/  
+https://docs.npmjs.com/misc/semver#advanced-range-syntax  
 
 
 ```
@@ -218,6 +232,22 @@ We also use GitFlow Workflow
     <a href="https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/">https://robinsvahn.wordpress.com/2017/04/03/git-flow-einfach-gemacht-sourcetree/</a><br>
     <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a><br>
 </details>
+
+### yarn
+
+https://yarnpkg.com/lang/en/docs/migrating-from-npm/#toc-cli-commands-comparison
+
+| npm (v5)                           | Yarn                       |
+| ---------------------------------- | -------------------------- |
+| npm install                        | yarn install               |
+| (N/A)                              | yarn install --flat        |
+| npm install [package] --save-dev   | yarn add [package] --dev   |
+| npm install [package] --global     | yarn global add [package]  |
+| npm update --global                | yarn global upgrade        |
+| npm rebuild                        | yarn install --force       |
+| npm uninstall [package]            | yarn remove [package]      |
+| npm cache clean                    | yarn cache clean [package] |
+| rm -rf node_modules && npm install | yarn upgrade               |
 
 ## Localization
 ### i18n
