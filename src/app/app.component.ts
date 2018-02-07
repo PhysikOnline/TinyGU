@@ -49,7 +49,6 @@ export class AppComponent {
   }
 
   title = 'TinyGU';
-  easteregg = false;
 
   // // @ViewChild('test') myChild: ElementRef;
   // @ViewChildren('test') myChildren; // the class needs to implement AfterViewInit

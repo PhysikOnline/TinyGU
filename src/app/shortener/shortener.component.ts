@@ -29,7 +29,6 @@ const GOETHE_URL_REGEX = /^(?:.*\.|.*\/{2})?(?:uni\-frankfurt\.de|asta\-frankfur
 export class ShortenerComponent implements OnInit {
   constructor(public dialog: MatDialog, private api: ApiService) { }
 
-  easteregg = false;
   moreOptions = false;
   inputURL = '';
   shortURL = '';

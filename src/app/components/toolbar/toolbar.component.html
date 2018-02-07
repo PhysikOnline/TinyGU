@@ -1,7 +1,6 @@
 <mat-toolbar color="primary" class="mat-toolbar" style="background-color: transparent">
   <!--TODO: remove inline style style="background-color: transparent"-->
 
-  <!--<div fxLayoutAlign="center">-->
   <div fxLayoutAlign="none center">
     <button mat-icon-button (click)="onSideNavOpen('mouse')">
       <mat-icon>menu</mat-icon>
@@ -9,41 +8,28 @@
 
     <!--<span i 1 8 n="@@app.toolbar-title"-->
     <span class="no-style-button" [routerLink]="['/']">{{ 'TinyGU' | titleSetter }}</span>
-    <!--[routerLink]="['/']">TinyGU</span>-->
   </div>
 
   <div fxFlex="1 1 auto"></div>
 
-  <div *ngIf="easteregg">
-    <button mat-raised-button color="primary">primary</button>
-    <button mat-raised-button color="warn">warn</button>
-    <button mat-raised-button color="accent">accent</button>
-    <button class="mat-raised-button">Language</button>
-  </div>
   <div>
-    <!--<button mat-icon-button (click)="easteregg = !easteregg"><mat-icon>language</mat-icon></button>-->
 
     <button mat-icon-button matTooltip="Language" (click)=select.open()>
       <mat-icon>language</mat-icon>
-      <!--<mat-form-field>-->
       <mat-select #select [(ngModel)]="setLang" class="langSelect">
         <mat-option (click)="changeLang()" value="en" i18n="choose english as language@@app.lang.english">English</mat-option>
         <mat-option (click)="changeLang()" value="de" i18n="choose german as language@@app.lang.german">Deutsch</mat-option>
       </mat-select>
-      <!--</mat-form-field>-->
     </button>
 
     <!-- help_outline / help / info_outline / info -->
-    <!--<button mat-icon-button matTooltip="Help" routerLink="help"><mat-icon>help</mat-icon></button>-->
     <button mat-icon-button matTooltip="Help" (click)=openHelpAsModal()>
       <mat-icon>help</mat-icon>
     </button>
-    <!--<button mat-button>Login</button>-->
     <!-- exit_to_app / account_box / account_circle / perm_identity / person / person_outline / supervisor_account -->
     <button mat-icon-button matTooltip="Login">
       <mat-icon>account_circle</mat-icon>
     </button>
   </div>
-  <!--</div>-->
 
 </mat-toolbar>
