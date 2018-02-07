@@ -66,24 +66,8 @@
             </mat-form-field>
           </div>
           <div fxFlex="none" fxFlexOffset="2vw">
-            <button mat-raised-button color="accent" (click)="easteregg = !easteregg" i18n="@@shortener.btnAddToAcc">add to account</button>
+            <button mat-raised-button color="accent" i18n="@@shortener.btnAddToAcc">add to account</button>
           </div>
-        </div>
-      </div>
-
-      <div class="row-div" fxLayoutAlign="center none" *ngIf="easteregg">
-        <div class="after-row-div" fxFlexAlign="center" fxFlex="100" fxLayout="row" fxLayout.lt-sm="column">
-          <button mat-raised-button>raised</button>
-          <button mat-raised-button color="primary">r primary</button>
-          <button mat-raised-button color="warn">r warn</button>
-          <button mat-raised-button color="accent" (click)=onTest()>r accent</button>
-          <button mat-button>mat button</button>
-          <button class="mat-button">class matbtn</button>
-          <button class="mat-button-toggle">c mb toogle</button>
-          <button class="mat-button-focus-overlay">c mb focus ovr</button>
-          <button class="mat-button-toggle-checked">c mb checked</button>
-          <button class="mat-button-toggle-disabled">c mb disabled</button>
-          <button class="mat-button-toggle-focus-overlay">c mb tgl fcs ovrl</button>
         </div>
       </div>
 
