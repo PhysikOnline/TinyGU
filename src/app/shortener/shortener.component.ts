@@ -40,6 +40,7 @@ export class ShortenerComponent implements OnInit {
   shortUrlFormControl = new FormControl('', Validators.minLength(2));
 
   ngOnInit() {
+    this.api.authorizeUser("User2", "password").subscribe(console.log);
   }
 
   onShorten() {

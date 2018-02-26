@@ -57,6 +57,7 @@ before_script: # commands to run before the build step
 #   - npm install --save @angular/animations
 #   - npm install @angular/flex-layout --save
    - npm install
+   - npm i -g angular-cli-ghpages
    - chmod +x ./before_script.travis.sh
    - ./before_script.travis.sh $TRAVIS_REPO_SLUG
 #   - travis encrypt "physikonline:$SLACK_TRAVIS_TOKEN#travisci" --add notifications.slack.rooms
@@ -65,9 +66,11 @@ before_script: # commands to run before the build step
 script: # the build step
    - ng build --prod --base-href "https://PhysikOnline.github.io/TinyGU/"
 
-before_deploy:
+# before_deploy:
+after_success:
    - chmod +x ./before_deploy.travis.sh
    - ./before_deploy.travis.sh
+   - ngh --repo=https://$GITHUB_TOKEN@github.com/PhysikOnline/TinyGU.git
 
 # http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
 # https://stackoverflow.com/questions/5411538/redirect-from-an-html-page
@@ -82,15 +85,15 @@ before_deploy:
 # https://www.ortussolutions.com/blog/build-test-and-deploy-your-module-with-travis-ci
 
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  local_dir: dist
-  file:
-  on:
-#    branch: master
-    all_branches: true
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#   local_dir: dist
+#   file:
+#   on:
+# #    branch: master
+#     all_branches: true
 
 notifications:
   email: false
