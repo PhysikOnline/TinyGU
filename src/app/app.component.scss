@@ -1,4 +1,7 @@
-html, body{height:100%}
+html,
+body {
+  height: 100%;
+}
 
 //#goethe-head {
 //  width:100%;
@@ -17,7 +20,7 @@ html, body{height:100%}
 
 #goethe-head {
   position: fixed;
-  z-index:-1;
+  z-index: -1;
   height: 100%;
   left: 50%;
 }
@@ -34,14 +37,11 @@ html, body{height:100%}
   }
 }
 
-.mat-card-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.no-style-button, .no-style-button:focus {
-  outline: 0px;       // disables the border around an focused element
+.no-style-button,
+.no-style-button:focus {
+  outline: 0px; // disables the border around an focused element
   cursor: pointer;
+  //padding: 0px 1em;
 }
 
 ::ng-deep .langSelect div.mat-select-arrow-wrapper {

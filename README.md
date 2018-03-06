@@ -1,29 +1,44 @@
-<h1> TinyGU </h1>
+<!-- 
+
+https://github.com/neilsustc/vscode-markdown
+
+settings:
+{
+    "markdown.extension.preview.autoShowPreviewToSide": true,
+    "markdown.extension.toc.updateOnSave": true
+    "markdown.extension.toc.levels": "2..6"
+}
+
+-->
+
+# TinyGU
+
+<!-- generate a TOC from the markdown code online: http://ecotrust-canada.github.io/markdown-toc/ -->
 
 - [Requirements](#requirements)
 - [Continuous Integration](#continuous-integration)
-  * [Travis-CI](#travis-ci)
-  * [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
+  - [Travis-CI](#travis-ci)
+  - [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
 - [Material Design](#material-design)
-  * [Color Style](#color-style)
+  - [Color Style](#color-style)
+- [Angular Modules](#angular-modules)
 - [Angular CLI](#angular-cli)
-  * [Development server](#development-server)
-  * [Build Angular App](#build-angular-app)
+  - [Development server](#development-server)
+  - [Build Angular App](#build-angular-app)
 - [Dev](#dev)
-  * [Update Angular](#update-angular)
-  * [Versioning](#versioning)
+  - [Update Angular](#update-angular)
+  - [Versioning](#versioning)
+  - [yarn](#yarn)
+  - [TSLint & Prettier](#tslint-prettier)
 - [Localization](#localization)
-  * [i18n](#i18n)
-  * [Translation Tools](#translation-tools)
-  * [LingoHub](#lingohub)
-  * [Transifex](#transifex)
+  - [i18n](#i18n)
+  - [Translation Tools](#translation-tools)
+  - [LingoHub](#lingohub)
+  - [Transifex](#transifex)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+---
 
-
-<!--
-https://pandao.github.io/editor.md/en.html
--->
+<!-- https://pandao.github.io/editor.md/en.html -->
 
 <!--
 https://badges.github.io/gh-badges/
@@ -34,22 +49,25 @@ https://github.com/boennemann/badges
 https://github.com/dwyl/repo-badges
 -->
 
-___
-
 [![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
 
-[![Angular Style Guide](https://img.shields.io/badge/Angular-Styleguide-red.svg)](https://angular.io/guide/styleguide)
+<!-- [![Angular Style Guide](https://img.shields.io/badge/Angular-Styleguide-red.svg)](https://angular.io/guide/styleguide) -->
+
+[![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 [![license](https://img.shields.io/github/license/PhysikOnline/TinyGU.svg)]()
 
+<h3>Builds</h3>
+
+[![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master branch build)](https://github.com/PhysikOnline/TinyGU)
+[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
+[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
 [![Build history](https://buildstats.info/travisci/chart/PhysikOnline/TinyGU?buildCount=100)](https://travis-ci.org/PhysikOnline/TinyGU)
 
-[![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master&nbsp;branch&nbsp;build)](https://github.com/PhysikOnline/TinyGU)
-[![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU) 
-[ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
+<h3>Code</h3>
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8fd3dd85f8a44589b62187d11a42bf1)](https://www.codacy.com/app/klezm/PO-TinyGU?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PhysikOnline/TinyGU&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8fd3dd85f8a44589b62187d11a42bf1)](https://www.codacy.com/app/klezm/PO-TinyGU?utm_source=github.com&utm_medium=referral&utm_content=PhysikOnline/TinyGU&utm_campaign=Badge_Grade)
 [![bitHound Overall Score](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/score.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU)
 [![bitHound Dependencies](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/dependencies.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/PhysikOnline/TinyGU/badges/devDependencies.svg)](https://www.bithound.io/github/PhysikOnline/TinyGU/master/dependencies/npm)
@@ -57,19 +75,22 @@ ___
 [![Coverage Status](https://coveralls.io/repos/github/PhysikOnline/TinyGU/badge.svg?branch=master)](https://coveralls.io/github/PhysikOnline/TinyGU?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/physikonline/tinygu/badge.svg)](https://snyk.io/test/github/physikonline/tinygu)
 [![dependencies Status](https://david-dm.org/PhysikOnline/TinyGU/status.svg)](https://david-dm.org/PhysikOnline/TinyGU)
+[![codecov](https://codecov.io/gh/PhysikOnline/TinyGU/branch/master/graph/badge.svg)](https://codecov.io/gh/PhysikOnline/TinyGU)
+
+<h3>GitHub stats</h3>
 
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/issue?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/pr?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
 
 [![GitHub release](https://img.shields.io/github/release/PhysikOnline/TinyGU/all.svg)](https://github.com/PhysikOnline/TinyGU/releases)
-[![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/PhysikOnline/TinyGU.svg?label=prerelease&nbsp;date)]()
+[![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/PhysikOnline/TinyGU.svg?label=prerelease date)]()
 [![GitHub last commit](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU.svg)]()
-[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PhysikOnline/TinyGU/prototype.svg?label=last&nbsp;commit&nbsp;(prototype))]()
+[![GitHub last commit (branch)](<https://img.shields.io/github/last-commit/PhysikOnline/TinyGU/master.svg?label=last commit (master)>)]()
 [![](https://img.shields.io/github/issues-raw/PhysikOnline/TinyGU.svg)]()
 [![](https://img.shields.io/github/issues-closed-raw/PhysikOnline/TinyGU.svg)]()
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/PhysikOnline/TinyGU.svg)]()
 [![GitHub top language](https://img.shields.io/github/languages/top/PhysikOnline/TinyGU.svg)]()
-[![GitHub language count](https://img.shields.io/github/languages/count/PhysikOnline/TinyGU.svg)]()
+[![GitHub language count](https://img.shields.io/github/languages /count/PhysikOnline/TinyGU.svg)]()
 
 <!--
 [![Github All Releases](https://img.shields.io/github/downloads/PhysikOnline/TinyGU/total.svg?label=all&nbsp;releases)](https://github.com/PhysikOnline/TinyGU/releases)
@@ -81,17 +102,23 @@ ___
 -->
 
 ## Requirements
-- https://angular.io/
-- https://material.angular.io/
-- https://github.com/angular/flex-layout
-- ~~https://github.com/trimox/angular-mdc-web (only for the mdc-textfield-box)~~
 
-## Continuous Integration & Deployment
+* https://angular.io/
+* https://material.angular.io/
+* https://github.com/angular/flex-layout
+* ~~https://github.com/trimox/angular-mdc-web (only for the mdc-textfield-box)~~
+
+## Continuous Integration
+
 ### Travis-CI
-via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\ ` are not built on travis.  
+
+via Travis CI the Project is automatically built and pushed to the gh-pages branch. The .travis.yml-config file is in the root directoy. Branches with the suffix `nobuild` or `nb` seperated by `.` `-` `_` `/` `\` are not built on travis.  
 Not set up yet but generally possible would be an integration of greenkeeper.io which automatically updates the packages for the builds at travis.
 
 ### Automatic deployment on GitHub Pages
+
+[angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
+([Deploy to GitHub Pages](https://github.com/angular/angular-cli/wiki/stories-github-pages))
 
 [![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
 
@@ -111,10 +138,36 @@ Not set up yet but generally possible would be an integration of greenkeeper.io 
 ### Dokku
 
 ## Material Design
+
 ### Color Style
 
 https://material.io/color/#!/?primary.color=005ea8  
 http://mcg.mbitson.com/#!?mcgpalette0=%23005ea8
+
+## Angular Modules
+
+* https://github.com/akveo/nebular
+* https://github.com/JavadRasouli/ng2-permission
+* https://github.com/AlexKhymenko/ngx-permissions
+
+probably interesting:
+
+* https://www.ag-grid.com/
+* https://github.com/zebzhao/Angular-QueryBuilder
+* https://www.primefaces.org/primeng/
+* http://fuelinteractive.github.io/fuel-ui
+* https://github.com/Teradata/covalent
+* https://github.com/sweetalert2/ngx-sweetalert2
+* https://swimlane.github.io/ngx-ui
+* https://jiayihu.github.io/ng-animate/
+* https://chenqingspring.github.io/ng-lottie/demo/
+* https://github.com/2muchcoffeecom/ngx-restangular
+* https://github.com/hiyali/ng-s-resource
+* https://github.com/fulls1z3/ngx-meta
+* https://github.com/techiediaries/ngx-qrcode
+* https://github.com/garciparedes/ng-katex
+* https://mdbootstrap.com/angular/
+* https://github.com/lauthieb/ngx-konami
 
 ## Angular CLI
 
@@ -122,14 +175,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Development server
 
-Run 
-`ng serve` 
+Run
+`ng serve`
 for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Alternatively when using Webstorm, you can set up a run command. Open "edit configurations" in the "Run" Menu. Add a "Bash" configuration. Now put in your Interpreter Path (cmd on Windows should be located at 
+Alternatively when using Webstorm, you can set up a run command. Open "edit configurations" in the "Run" Menu. Add a "Bash" configuration. Now put in your Interpreter Path (cmd on Windows should be located at
 `C:\Windows\system32\cmd.exe`
-). And as Interpreter options enter 
-`/k ng serve --port 4200`. 
+). And as Interpreter options enter
+`/k ng serve --port 4200`.
 now you can run the server by simply running the project.
 
 `ng serve --i18nFile src/locale/messages.de-DE.xlf --i18nFormat xlf --locale de --missingTranslation ignore -p 4200`
@@ -177,6 +230,7 @@ now you can run the server by simply running the project.
   </list>
 </component>
 ```
+
 </details>
 
 ### Build Angular App
@@ -186,28 +240,29 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Dev
 
 ### Update Angular
+
 to update Angular: https://angular-update-guide.firebaseapp.com/
 
-`npm outdated`, `npm update` and `npm ls --depth=0` are very handy commands  
+`yarn outdated`, `yarn upgrade` and `yarn ls --depth=0` are very handy commands
 
 replace the version number `@'^5.0.0'` with `@latest` and probably add --save to the end of the command.
 On windows run cmd as admin!
 
 to update Angular-CLI: https://github.com/angular/angular-cli#updating-angular-cli
 
-if webpack is missing (`ng version`) install it with 
-`npm install --save-dev webpack` 
+if webpack is missing (`ng version`) install it with
+`npm install --save-dev webpack`
 
 `npm-check-updates` makes it very easy to update packeges if you dont want use greenkeeper.io
-run 
-`ncu -x typescript -u -a` 
+run
+`ncu -x typescript -u -a`
 
 ### Versioning
 
-we use the semantic versioning for this app:
-https://docs.npmjs.com/getting-started/semantic-versioning
-http://nodesource.com/blog/semver-a-primer/
-
+we use the semantic versioning for this app:  
+https://docs.npmjs.com/getting-started/semantic-versioning  
+http://nodesource.com/blog/semver-a-primer/  
+https://docs.npmjs.com/misc/semver#advanced-range-syntax
 
 ```
                        Major   Patch   Metadata
@@ -233,11 +288,49 @@ We also use GitFlow Workflow
     <a href=""></a><br>
 </details>
 
+### yarn
+
+https://yarnpkg.com/lang/en/docs/migrating-from-npm/#toc-cli-commands-comparison
+
+| npm (v5)                           | Yarn                       |
+| ---------------------------------- | -------------------------- |
+| npm install                        | yarn install               |
+| (N/A)                              | yarn install --flat        |
+| npm install [package] --save-dev   | yarn add [package] --dev   |
+| npm install [package] --global     | yarn global add [package]  |
+| npm update --global                | yarn global upgrade        |
+| npm rebuild                        | yarn install --force       |
+| npm uninstall [package]            | yarn remove [package]      |
+| npm cache clean                    | yarn cache clean [package] |
+| rm -rf node_modules && npm install | yarn upgrade               |
+
+### TSLint & Prettier
+
+[Link 1](https://alexjoverm.github.io/2017/06/12/Use-Prettier-with-TSLint-and-be-happy/),
+[Link 2](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537)
+
+```
+yarn add  prettier --dev
+yarn add tslint-config-prettier --dev
+```
+
+Add it to the end of your tslint.json file:
+
+```
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ]
+}
+```
+
 ## Localization
+
 ### i18n
 
 to generate the source file:
-`ng xi18n --locale en-US --i18nFormat=xlf --outputPath src/locale --out-file messages.en-US.xlf` 
+`ng xi18n --locale en-US --i18nFormat=xlf --outputPath src/locale --out-file messages.en-US.xlf`
 
 ### Translation Tools
 
@@ -258,11 +351,14 @@ as an alternative to transifex there are some other companies that offer free ac
 </details>
 
 ### LingoHub
-We switched to LingoHub since it is very easy to use. It connects with a GitHub or Bitbucket account and pulls the 
-source automatically and offers to push the new strings to the repo directly or as PR  
+
+We switched to LingoHub since it is very easy to use. It connects with a GitHub or Bitbucket account and pulls the
+source automatically and offers to push the new strings to the repo directly or as PR
 
 ### Transifex
+
 since we switched to LingoHub we dont use Transifex anymore
+
 <details>
   <summary>how to use Transifex in this project</summary>
 

@@ -8,33 +8,32 @@ export interface UserAPImodel {
 }
 
 export class User {
-
-  constructor (
+  constructor(
     public name: string,
     public links: Link[],
     public id: number,
-    public dateCreated: string) {
+    public dateCreated: string
+  ) {}
+
+  static fromAPItype(r: UserAPImodel) {
+    if (!r) {
+      return;
+    } else {
+      return new User(
+        r.name,
+        r.links.map(oneLink => Link.fromAPItype(oneLink)),
+        r.id,
+        r.dateCreated
+      );
+    }
   }
 
-  static fromAPItype (r: UserAPImodel) {
-    if (!r) return;
-    return new User(
-      r.name,
-      r.links.map(oneLink => Link.fromAPItype(oneLink)),
-      r.id,
-      r.dateCreated
-    );
-  }
-
-  toAPItype (): UserAPImodel {
-    return{
+  toAPItype(): UserAPImodel {
+    return {
       name: this.name,
       links: this.links,
       id: this.id,
       dateCreated: this.dateCreated,
     };
   }
-
 }
-
-
