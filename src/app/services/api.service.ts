@@ -11,6 +11,7 @@ const apiURLs = {
   createURL: environment.apiURL + '/api/v1/links',
   updateURL: environment.apiURL + '/api/v1/links/',
   deleteURL: environment.apiURL + '/api/v1/links/',
+  authURL: environment.apiURL + '/api/v1/users/authorize',
 };
 
 @Injectable()
@@ -42,6 +43,11 @@ export class ApiService {
   // url: "http://localhost:5000/api/v1/links/24", ok: false, …}
   deleteLink (id: number) {
     return this.http.delete(apiURLs.deleteURL + id);
+  }
+
+  authorizeUser (userName: string, password: string) {
+    const usrModel = {userName, password}
+    return  this.http.post(apiURLs.authURL, usrModel);
   }
 
 }
