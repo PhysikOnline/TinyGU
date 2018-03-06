@@ -17,7 +17,9 @@
           <!--TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2-->
           <!--TODO remove value property-->
           <!--<div>-->
-          <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/" [(ngModel)]="inputURL" [formControl]="urlFormControl">
+          <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
+          <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
+            [formControl]="urlFormControl">
           <!--<mat-icon matSuffix>info</mat-icon>-->
           <!--</div>-->
           <!--TODO trigger checking also for first time visit-->
@@ -87,7 +89,7 @@
         </ng-container>
       </mat-table> -->
 
-      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em">
+      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce">
         <mat-list>
           <!--TODO i18n pluralization-->
           <!-- <h3 mat-subheader>Your created Link</h3> -->

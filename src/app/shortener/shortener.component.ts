@@ -1,4 +1,11 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  Input,
+  trigger,
+  transition,
+} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
@@ -6,6 +13,15 @@ import { ApiService } from '../services/api.service';
 import { Link, LinkAPImodel } from '../models/link';
 import { HttpResponseModalComponent } from '../modal/http-response-modal.component';
 import { LoginReminderModalComponent } from '../modal/login-reminder-modal.component';
+import {
+  bounceIn,
+  bounceInUp,
+  fadeIn,
+  fadeInUp,
+  slideInDown,
+  flipInX,
+} from 'ngx-animate';
+import { useAnimation } from '@angular/animations';
 
 // some crazy page to generate the regex just with some samples!
 // http://txt2re.com http://regex.inginf.units.it/
@@ -42,6 +58,9 @@ const GOETHE_URL_REGEX = new RegExp(
   selector: 'app-shortener',
   templateUrl: './shortener.component.html',
   styleUrls: ['./shortener.component.scss'],
+  animations: [
+    trigger('bounce', [transition('* => *', useAnimation(bounceIn))]),
+  ],
 })
 export class ShortenerComponent implements OnInit {
   constructor(public dialog: MatDialog, private api: ApiService) {}
@@ -52,6 +71,7 @@ export class ShortenerComponent implements OnInit {
   loggedInVar = true; // TODO set false
   shortenedLinks = [];
   readonly urlName = location.host;
+  bounce: any;
 
   urlFormControl = new FormControl('', [
     Validators.pattern(URL_REGEX),
