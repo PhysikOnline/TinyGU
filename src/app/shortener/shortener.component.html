@@ -76,9 +76,9 @@
         </div>
       </div> -->
 
-    </div>
+      <!-- </div> -->
 
-    <div class="row-div" fxLayoutAlign="center none">
+      <!-- <div class="row-div" fxLayout="column" fxLayoutAlign="start center" > -->
 
       <!-- <mat-table #table [dataSource]="">
         <ng-container cdkColumnDef="column">
@@ -87,10 +87,27 @@
         </ng-container>
       </mat-table> -->
 
+      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em">
+        <mat-list>
+          <!--TODO i18n pluralization-->
+          <!-- <h3 mat-subheader>Your created Link</h3> -->
+          <mat-list-item *ngIf="shortenedLinks[0]">
+            <mat-icon mat-list-icon>link</mat-icon>
+            <h4 mat-line>
+              <!-- <a href="https://{{ urlName }}/{{ link[1] }}"> -->
+              <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{ link[1] }}">
+                https://{{ urlName }}/{{ link[1] }}
+              </a>
+            </h4>
+            <p mat-line>
+              <a href="{{ link[0] }}">
+                {{ link[0] }}
+              </a>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
 
-      <mat-list>
-        <mat-list-item *ngFor="let link of shortenedLinks">{{ link }}</mat-list-item>
-      </mat-list>
     </div>
 
   </div>

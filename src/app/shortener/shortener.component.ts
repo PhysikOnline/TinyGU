@@ -51,6 +51,7 @@ export class ShortenerComponent implements OnInit {
   shortURL = '';
   loggedInVar = true; // TODO set false
   shortenedLinks = [];
+  readonly urlName = location.host;
 
   urlFormControl = new FormControl('', [
     Validators.pattern(URL_REGEX),
