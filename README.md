@@ -15,26 +15,24 @@ settings:
 
 <!-- generate a TOC from the markdown code online: http://ecotrust-canada.github.io/markdown-toc/ -->
 
-- [Requirements](#requirements)
-- [Continuous Integration](#continuous-integration)
-  - [Travis-CI](#travis-ci)
-  - [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
-- [Material Design](#material-design)
-  - [Color Style](#color-style)
-- [Angular Modules](#angular-modules)
-- [Angular CLI](#angular-cli)
-  - [Development server](#development-server)
-  - [Build Angular App](#build-angular-app)
-- [Dev](#dev)
-  - [Update Angular](#update-angular)
-  - [Versioning](#versioning)
-  - [yarn](#yarn)
-  - [TSLint & Prettier](#tslint-prettier)
-- [Localization](#localization)
-  - [i18n](#i18n)
-  - [Translation Tools](#translation-tools)
-  - [LingoHub](#lingohub)
-  - [Transifex](#transifex)
+* [Requirements](#requirements)
+* [Continuous Integration](#continuous-integration)
+  * [Travis-CI](#travis-ci)
+  * [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
+* [Material Design](#material-design)
+  * [Color Style](#color-style)
+* [Angular CLI](#angular-cli)
+  * [Development server](#development-server)
+  * [Build Angular App](#build-angular-app)
+* [Dev](#dev)
+  * [Update Angular](#update-angular)
+  * [Versioning](#versioning)
+  * [yarn](#yarn)
+* [Localization](#localization)
+  * [i18n](#i18n)
+  * [Translation Tools](#translation-tools)
+  * [LingoHub](#lingohub)
+  * [Transifex](#transifex)
 
 ---
 
@@ -56,14 +54,14 @@ https://github.com/dwyl/repo-badges
 [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 [![license](https://img.shields.io/github/license/PhysikOnline/TinyGU.svg)]()
 
-<h3>Builds</h3>
+### Builds
 
 [![Travis branch](https://img.shields.io/travis/PhysikOnline/TinyGU/master.svg?label=master branch build)](https://github.com/PhysikOnline/TinyGU)
 [![Build Status](https://travis-ci.org/PhysikOnline/TinyGU.svg)](https://travis-ci.org/PhysikOnline/TinyGU)
 [ ![Codeship Status for PhysikOnline/TinyGU](https://app.codeship.com/projects/f401c6b0-d1e0-0135-f946-2eb09e3049d8/status?branch=master)](https://app.codeship.com/projects/262465)
 [![Build history](https://buildstats.info/travisci/chart/PhysikOnline/TinyGU?buildCount=100)](https://travis-ci.org/PhysikOnline/TinyGU)
 
-<h3>Code</h3>
+### Code
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/maintainability)](https://codeclimate.com/github/PhysikOnline/TinyGU/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/41e4da50ab5d83a0064b/test_coverage)](https://codeclimate.com/github/PhysikOnline/TinyGU/test_coverage)
@@ -77,7 +75,7 @@ https://github.com/dwyl/repo-badges
 [![dependencies Status](https://david-dm.org/PhysikOnline/TinyGU/status.svg)](https://david-dm.org/PhysikOnline/TinyGU)
 [![codecov](https://codecov.io/gh/PhysikOnline/TinyGU/branch/master/graph/badge.svg)](https://codecov.io/gh/PhysikOnline/TinyGU)
 
-<h3>GitHub stats</h3>
+### GitHub stats
 
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/issue?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
 [![Issue Stats](http://issuestats.com/github/PhysikOnline/TinyGU/badge/pr?style=flat)](http://issuestats.com/github/PhysikOnline/TinyGU)
@@ -130,31 +128,6 @@ Not set up yet but generally possible would be an integration of greenkeeper.io 
 
 https://material.io/color/#!/?primary.color=005ea8  
 http://mcg.mbitson.com/#!?mcgpalette0=%23005ea8
-
-## Angular Modules
-
-* https://github.com/akveo/nebular
-* https://github.com/JavadRasouli/ng2-permission
-* https://github.com/AlexKhymenko/ngx-permissions
-
-probably interesting:
-
-* https://www.ag-grid.com/
-* https://github.com/zebzhao/Angular-QueryBuilder
-* https://www.primefaces.org/primeng/
-* http://fuelinteractive.github.io/fuel-ui
-* https://github.com/Teradata/covalent
-* https://github.com/sweetalert2/ngx-sweetalert2
-* https://swimlane.github.io/ngx-ui
-* https://jiayihu.github.io/ng-animate/
-* https://chenqingspring.github.io/ng-lottie/demo/
-* https://github.com/2muchcoffeecom/ngx-restangular
-* https://github.com/hiyali/ng-s-resource
-* https://github.com/fulls1z3/ngx-meta
-* https://github.com/techiediaries/ngx-qrcode
-* https://github.com/garciparedes/ng-katex
-* https://mdbootstrap.com/angular/
-* https://github.com/lauthieb/ngx-konami
 
 ## Angular CLI
 
