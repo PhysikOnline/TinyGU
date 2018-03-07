@@ -1,11 +1,13 @@
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import {
-  Component,
-  OnInit,
-  Inject,
-  Input,
   trigger,
+  state,
+  style,
+  animate,
   transition,
-} from '@angular/core';
+  useAnimation,
+  AnimationEvent,
+} from '@angular/animations';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
@@ -15,13 +17,15 @@ import { HttpResponseModalComponent } from '../modal/http-response-modal.compone
 import { LoginReminderModalComponent } from '../modal/login-reminder-modal.component';
 import {
   bounceIn,
+  bounceOut,
   bounceInUp,
+  bounceInDown,
   fadeIn,
   fadeInUp,
   slideInDown,
   flipInX,
+  shake,
 } from 'ngx-animate';
-import { useAnimation } from '@angular/animations';
 
 // some crazy page to generate the regex just with some samples!
 // http://txt2re.com http://regex.inginf.units.it/
@@ -59,7 +63,10 @@ const GOETHE_URL_REGEX = new RegExp(
   templateUrl: './shortener.component.html',
   styleUrls: ['./shortener.component.scss'],
   animations: [
-    trigger('bounce', [transition('* => *', useAnimation(bounceIn))]),
+    trigger('bounce', [
+      transition(':enter', useAnimation(bounceInUp)),
+      transition('void => *', useAnimation(bounceOut)),
+    ]),
   ],
 })
 export class ShortenerComponent implements OnInit {
@@ -83,6 +90,13 @@ export class ShortenerComponent implements OnInit {
 
   ngOnInit() {
     this.api.authorizeUser('User2', 'password').subscribe(console.log);
+  }
+
+  animationStarted($event) {
+    console.log($event);
+  }
+  animationEnded($event) {
+    console.log($event);
   }
 
   onShorten() {

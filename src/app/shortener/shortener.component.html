@@ -89,7 +89,8 @@
         </ng-container>
       </mat-table> -->
 
-      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce">
+      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationStarted($event)"
+        (@bounce.done)="animationEnded($event)">
         <mat-list>
           <!--TODO i18n pluralization-->
           <!-- <h3 mat-subheader>Your created Link</h3> -->
