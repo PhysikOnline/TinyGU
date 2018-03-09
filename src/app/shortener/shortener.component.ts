@@ -64,9 +64,10 @@ const GOETHE_URL_REGEX = new RegExp(
   styleUrls: ['./shortener.component.scss'],
   animations: [
     trigger('bounce', [
-      transition(':enter', useAnimation(bounceInUp)),
+      transition(':enter', useAnimation(bounceIn)),
       transition('void => *', useAnimation(bounceOut)),
     ]),
+    trigger('error', [transition('* => *', useAnimation(shake))]),
   ],
 })
 export class ShortenerComponent implements OnInit {
@@ -128,19 +129,15 @@ export class ShortenerComponent implements OnInit {
       // http://reactivex.io/documentation/operators/subscribe.html
       this.api.createLink(link).subscribe(
         data => {
-          console.log('onNext---->>>>>>>>>>>>>>>>>>>>');
-          console.log(data);
-          console.log(data.shortUrl);
+          console.log('onNext---->>>>>>>>>>>>>>>>>>>>', data, data.shortUrl);
           // successMessage = [data.longUrl, data.shortUrl, (data.owner ? '1' : '0'), data.dateCreated]; // to much data
           successMessage = [data.longUrl, data.shortUrl];
           this.shortenedLinks.unshift([data.longUrl, data.shortUrl]);
-          console.log(this.shortenedLinks);
-          console.log('<<<<<<<<<<<<<<<<<<<<----onNext');
+          console.log(this.shortenedLinks, '<<<<<<<<<<<<<<<<<<<<----onNext');
         },
         err => {
-          console.log('ERROR---->>>>>>>>>>>>>>>>>>>>');
-          console.error(err); // whole error; "err.error.error" -> actual error message; "err.message" -> generated error message
-          console.error(err.error.error);
+          console.log('ERROR---->>>>>>>>>>>>>>>>>>>>', err, err.error.error);
+          // whole error; "err.error.error" -> actual error message; "err.message" -> generated error message
           // this.dialog.open(HttpResponseModalComponent, {
           // data: { errorMessage: err.error.error },
           // });

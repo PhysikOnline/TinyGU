@@ -12,7 +12,7 @@
       <!--TODO inline style style="width: 500px;"-->
       <div class="after-row-div" fxFlex="50" fxFlex.lt-sm="90">
         <!--fxFlexAlign="center"-->
-        <mat-form-field floatPlaceholder="never" class="input-box" style="width: 100%" (keyup.enter)="onShorten()">
+        <mat-form-field floatPlaceholder="never" class="input-box" style="width: 100%" (keyup.enter)="onShorten()" [@error]="urlFormControl.hasError('pattern')">
           <!--TODO remove inline style-->
           <!--TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2-->
           <!--TODO remove value property-->
