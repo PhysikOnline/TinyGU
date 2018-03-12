@@ -1,39 +1,75 @@
-@import "../../../node_modules/@angular/material/prebuilt-themes/pink-bluegrey";
+// @import '../../../node_modules/@angular/material/prebuilt-themes/pink-bluegrey';
+@import '~@angular/material/theming';
 
-$input-padding: 0px 0px 13.5px 16px;   //padding: 0px 0px 8px 16px;
+$input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 
-::ng-deep .input-box .mat-input-infix { //use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
-      @extend .mat-elevation-z8;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: $input-padding;
-      border-radius: 4px 4px 0 0;
-      //@extend .mat-elevation-z5;
-      //height: 28px;
+// ::ng-deep .input-box .mat-input-infix {
+::ng-deep .input-box .mat-form-field-flex {
+  //use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
+  // @extend .mat-elevation-z8;
+  @include mat-elevation(8);
+  background-color: rgba(255, 255, 255, 0.4);
+  // padding: $input-padding;
+  border-radius: 4px 4px 0 0;
+  //height: 28px;
 }
 
-::ng-deep .input-box  .mat-input-placeholder {
-  padding: $input-padding;
-  position: initial;
+// css for all child elements
+::ng-deep .input-box .mat-form-field-flex > * {
+  margin: 10px 10px 10px 10px;
+  // margin: 0;
+  border: 0px;
+  // padding: 0px 0 7px 0;
+  padding: 0;
+  align-self: center;
+  .mat-icon {
+    cursor: pointer;
+  }
 }
 
-::ng-deep .mat-input-element{
+// ::ng-deep .mat-input-infix,
+// .mat-form-field-infix {
+//   margin: 0 10px 5px 10px;
+//   border: 0px;
+// }
+
+// ::ng-deep .mat-input-suffix,
+// .mat-form-field-suffix {
+//   @extend .mat-form-field-infix;
+//   // margin: 0 10px 5px 10px;
+//   padding: 0px 0 7px 0;
+//   // .mat-icon, .material-icons {
+//   // };
+// }
+
+::ng-deep .mat-input-element,
+.mat-form-field-autofill-control {
+  // padding: 20px;
+}
+
+// ::ng-deep .input-box .mat-input-placeholder {
+//   padding: $input-padding;
+//   position: initial;
+// }
+
+::ng-deep .mat-input-element {
   //padding: 8px !important;
 }
 
-.search-box-div{
+.search-box-div {
   //display: flex;
   //flex-direction: row;
   //flex: 1;
 }
 
-.row-div{
+.row-div {
   //flex-direction: row;
   //flex-grow: 1 0 auto;
   width: 100%;
   //align-items: stretch;
 }
 
-.after-row-div{
+.after-row-div {
   //offset-before: 25%;
   //offset-start: 25%;
   align-items: center;
@@ -45,6 +81,9 @@ $input-padding: 0px 0px 13.5px 16px;   //padding: 0px 0px 8px 16px;
   margin-top: 10px;
 }
 
+.link-card {
+  // max-width: 100%
+}
 
 ///deep/ .mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-placeholder-wrapper .mat-form-field-placeholder {
 //  transform: translateY(-1.28125em) scale(.15) perspective(100px) translateZ(.001px);

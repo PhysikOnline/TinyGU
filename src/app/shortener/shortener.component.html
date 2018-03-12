@@ -10,17 +10,22 @@
     <!--<div fxLayout="row" fxFlex="5vw" fxLayoutAlign="start start"> &lt;!&ndash;TODO inline style style="width: 500px;"&ndash;&gt;-->
     <div class="row-div" fxLayoutAlign="center none">
       <!--TODO inline style style="width: 500px;"-->
-      <div class="after-row-div" fxFlex="50" fxFlex.lt-sm="90">
+      <div class="after-row-div" fxFlex="50" fxFlex.lt-sm="90" fxFlexAlign="centern">
         <!--fxFlexAlign="center"-->
-        <mat-form-field floatPlaceholder="never" class="input-box" style="width: 100%" (keyup.enter)="onShorten()" [@error]="urlFormControl.hasError('pattern')">
+        <mat-form-field floatPlaceholder="never" class="input-box" style="width: 100%" (keyup.enter)="onShorten()" [@error]="matcher">
           <!--TODO remove inline style-->
           <!--TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2-->
           <!--TODO remove value property-->
           <!--<div>-->
           <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
           <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
-            [formControl]="urlFormControl">
-          <!--<mat-icon matSuffix>info</mat-icon>-->
+            [formControl]="urlFormControl" [errorStateMatcher]="matcher">
+          <!-- <mat-icon matSuffix>info</mat-icon> -->
+          <!-- <mat-icon matSuffix>clear</mat-icon> -->
+          <!-- <mat-icon matSuffix>send</mat-icon> -->
+          <!-- <mat-icon matSuffix>add_circle</mat-icon> -->
+          <!-- <mat-icon matSuffix>forward</mat-icon> -->
+          <mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>
           <!--</div>-->
           <!--TODO trigger checking also for first time visit-->
           <mat-error *ngIf="urlFormControl.hasError('pattern')">
@@ -90,7 +95,7 @@
       </mat-table> -->
 
       <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationStarted($event)"
-        (@bounce.done)="animationEnded($event)">
+        (@bounce.done)="animationEnded($event)" class="link-card">
         <mat-list>
           <!--TODO i18n pluralization-->
           <!-- <h3 mat-subheader>Your created Link</h3> -->

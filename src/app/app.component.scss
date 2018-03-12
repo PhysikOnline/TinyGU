@@ -42,6 +42,9 @@ body {
   outline: 0px; // disables the border around an focused element
   cursor: pointer;
   //padding: 0px 1em;
+  &:hover {
+    color: hsla(0, 0%, 85%, 1);
+  }
 }
 
 ::ng-deep .langSelect div.mat-select-arrow-wrapper {

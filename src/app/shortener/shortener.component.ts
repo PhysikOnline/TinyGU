@@ -8,7 +8,8 @@ import {
   useAnimation,
   AnimationEvent,
 } from '@angular/animations';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
@@ -58,6 +59,13 @@ const GOETHE_URL_REGEX = new RegExp(
 );
 // const COMBINED_URL_REGEX = new RegExp(URL_REGEX.source + GOETHE_URL_REGEX.source);
 
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
 @Component({
   selector: 'app-shortener',
   templateUrl: './shortener.component.html',
@@ -88,6 +96,8 @@ export class ShortenerComponent implements OnInit {
   // urlFormControl = new FormControl('inputURL', [Validators.pattern(URL_REGEX), Validators.pattern(GOETHE_URL_REGEX)]);
   // TODO update shorturl check
   shortUrlFormControl = new FormControl('', Validators.minLength(2));
+
+  matcher = new MyErrorStateMatcher();
 
   ngOnInit() {
     this.api.authorizeUser('User2', 'password').subscribe(console.log);
