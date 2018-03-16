@@ -1,72 +1,64 @@
-<div fxFill fxFlexFill fxLayoutAlign="start center" fxLayout="column">
-  <div fxFlex="auto" fxHide.xs="true">
-    <!--TODO position fixed? relative?-->
-    <img src="assets/link_icon.png" id="tinygu-logo">
-  </div>
+<div fxFlex>
+  <div fxLayoutAlign="start center" fxLayout="column">
 
-  <div fxLayout="column" fxLayoutAlign="start center" fxFill fxFlexFill fxFlex="auto" fxFlexOffset="10px">
-
-    <!--<form>-->
-    <!--<div fxLayout="row" fxFlex="5vw" fxLayoutAlign="start start"> &lt;!&ndash;TODO inline style style="width: 500px;"&ndash;&gt;-->
-    <div class="row-div" fxLayoutAlign="center none">
-      <!--TODO inline style style="width: 500px;"-->
-      <div class="after-row-div" fxFlex="50" fxFlex.lt-sm="90" fxFlexAlign="centern">
-        <!--fxFlexAlign="center"-->
-        <mat-form-field floatPlaceholder="never" class="input-box" style="width: 100%" (keyup.enter)="onShorten()" [@error]="matcher">
-          <!--TODO remove inline style-->
-          <!--TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2-->
-          <!--TODO remove value property-->
-          <!--<div>-->
-          <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
-          <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
-            [formControl]="urlFormControl" [errorStateMatcher]="matcher">
-          <!-- <mat-icon matSuffix>info</mat-icon> -->
-          <!-- <mat-icon matSuffix>clear</mat-icon> -->
-          <!-- <mat-icon matSuffix>send</mat-icon> -->
-          <!-- <mat-icon matSuffix>add_circle</mat-icon> -->
-          <!-- <mat-icon matSuffix>forward</mat-icon> -->
-          <mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>
-          <!--</div>-->
-          <!--TODO trigger checking also for first time visit-->
-          <mat-error *ngIf="urlFormControl.hasError('pattern')">
-            <ng-container i18n="@@shortener.enterValidURL">Please enter a valid URL</ng-container>
-          </mat-error>
-        </mat-form-field>
-      </div>
+    <!-- image above input field -->
+    <div fxFlex="auto" fxHide.xs="true">
+      <!--TODO position fixed? relative?-->
+      <img src="assets/link_icon.png" id="tinygu-logo">
     </div>
 
-    <!--<mdc-textfield-box label="Your Uni Frankfurt URL" id="url" [(ngModel)]="inputURL" [formControl]="urlFormControl"-->
-    <!--class="mat-elevation-z5" style="background-color: rgba(255, 255, 255, 0.55)">-->
-    <!--</mdc-textfield-box>-->
-    <!--<p mdc-textfield-helptext [validation]="!urlFormControl.hasError('pattern')">Please enter a valid URL</p>-->
-    <!--</form >-->
+    <!-- div for INPUT, BUTTONS, SHORTLINK_INPUT -->
+    <!--<div fxFlex="1 0 fit-content">-->
+    <div fxLayout="column" fxLayoutAlign="start center" fxFlexOffset.gt-sm="10px" class="input-container">
 
-    <div *ngIf="inputURL" fxLayout="column" fxLayoutAlign="start center" fxFlex="nogrow" fxFlexFill fxFlexOffset="4vh">
-      <!--<div *ngIf="true" fxLayout="column" fxLayoutAlign="start center" fxFlex="nogrow" fxFlexFill fxFlexOffset="4vh">-->
-      <!--<p>{{ inputURL }}</p>-->
-      <!--shows the inputURL content in a paragraph-->
+      <!--<div class="row-div" fxLayoutAlign="center none">-->
+      <!--<div class="after-row-div" fxFlex.lt-sm="90">-->
 
-      <div class="row-div">
-        <div class="after-row-div" fxLayout="row" fxLayout.lt-sm="column" fxFlexOffset="25%" fxFlex="50" fxLayoutAlign="space-between">
+      <!-- main input field -->
+      <!-- TODO resizeToFitContent > https://material.angular.io/components/input/api -->
+      <!-- TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2 -->
+      <mat-form-field fxFlexFill floatPlaceholder="never" class="input-box" (keyup.enter)="onShorten()" [@error]="matcher">
+        <!--TODO remove value property-->
 
-          <button mat-raised-button color="accent" (click)="onShorten()" i18n="shorten command on Button@@shortener.btnShorten">shorten</button>
-          <!--<button mat-raised-button color="accent" (click)="onShorten()" [disabled]="urlFormControl.hasError">shorten</button>-->
-          <!-- <button mat-raised-button color="raised" (click)="moreOptions = !moreOptions" i18n="@@shortener.btnMore">more options</button> -->
+        <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
+        <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
+          [formControl]="urlFormControl" [errorStateMatcher]="matcher">
+        <mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>
+        <!-- info clear send add_circle forward -->
 
-          <mat-form-field floatPlaceholder="never" style="width: 100%" (keyup.enter)="onShorten()">
-            <input matInput placeholder="custom url" [(ngModel)]="shortURL" [formControl]="shortUrlFormControl">
-            <div matPrefix>goethe.link/</div>
-            <mat-error *ngIf="shortUrlFormControl.value">
-              <ng-container i18n="chosen shortlink is already taken@@shortener.linkTaken">short link is already taken</ng-container>
-            </mat-error>
-          </mat-form-field>
+        <mat-error *ngIf="urlFormControl.hasError('pattern')">
+          <ng-container i18n="@@shortener.enterValidURL">Please enter a valid URL</ng-container>
+        </mat-error>
+      </mat-form-field>
 
-        </div>
-      </div>
 
-      <!--TODO regex zb keine leerzeichen nur ascii??-->
+      <!--</div>-->
+      <!--</div>-->
 
-      <!-- <div class="row-div" fxLayoutAlign="center none" *ngIf="moreOptions">
+      <!--<div *ngIf="inputURL" fxLayout="column" fxLayoutAlign="start center" fxFlex="nogrow"  fxFlexOffset="1vh">-->
+
+      <!--<div class="row-div">-->
+      <!--<div class="after-row-div" fxLayout="row" fxLayout.lt-sm="column" fxFlexOffset="25%" fxFlex="50" fxLayoutAlign="space-between">-->
+
+      <button mat-raised-button color="accent" [disabled]="urlFormControl.hasError('pattern')" (click)="onShorten()" i18n="shorten command on Button@@shortener.btnShorten">shorten</button>
+
+      <mat-form-field floatPlaceholder="never" (keyup.enter)="onShorten()">
+        <input matInput placeholder="custom url" [(ngModel)]="shortURL" [formControl]="shortUrlFormControl">
+        <div matPrefix>goethe.link/</div>
+        <mat-error *ngIf="shortUrlFormControl.value">
+          <ng-container i18n="chosen shortlink is already taken@@shortener.linkTaken">short link is already taken</ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+    </div>
+
+    <!--TODO regex zb keine leerzeichen nur ascii??-->
+
+    <!-- <div class="row-div" fxLayoutAlign="center none" *ngIf="moreOptions">
         <div class="after-row-div" fxFlexAlign="center" fxFlex="50" fxFlex.lt-sm="90" fxLayout="row" fxLayout.lt-sm="column">
           <div fxFlex="grow">
             <mat-form-field floatPlaceholder="never" style="width: 100%">
@@ -83,40 +75,47 @@
         </div>
       </div> -->
 
-      <!-- </div> -->
+    <!-- </div> -->
 
-      <!-- <div class="row-div" fxLayout="column" fxLayoutAlign="start center" > -->
+    <!-- <div class="row-div" fxLayout="column" fxLayoutAlign="start center" > -->
 
-      <!-- <mat-table #table [dataSource]="">
+    <!-- <mat-table #table [dataSource]="">
         <ng-container cdkColumnDef="column">
           <mat-header-cell *cdkHeaderCellDef> header </mat-header-cell>
           <mat-cell *cdkCellDef="let row"> {{row.column}} </mat-cell>
         </ng-container>
       </mat-table> -->
 
-      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationStarted($event)"
-        (@bounce.done)="animationEnded($event)" class="link-card">
-        <mat-list>
-          <!--TODO i18n pluralization-->
-          <!-- <h3 mat-subheader>Your created Link</h3> -->
-          <mat-list-item *ngIf="shortenedLinks[0]">
-            <mat-icon mat-list-icon>link</mat-icon>
-            <h4 mat-line>
-              <!-- <a href="https://{{ urlName }}/{{ link[1] }}"> -->
-              <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{ link[1] }}">
-                https://{{ urlName }}/{{ link[1] }}
-              </a>
-            </h4>
-            <p mat-line>
-              <a href="{{ link[0] }}">
-                {{ link[0] }}
-              </a>
-            </p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
+    <!-- CARDS(which appear after creating links) -->
+    <!--TODO scrollbar-->
+    <!--https://github.com/MurhafSousli/ngx-scrollbar-->
+    <!--https://github.com/jfcere/ngx-malihu-scrollbar-->
+    <!--<div fxFlex="1 1 max-content">-->
+    <!--<div class="card-container" fxLayout="column">-->
+    <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationStarted($event)"
+      (@bounce.done)="animationEnded($event)" class="link-card">
+      <mat-list>
+        <!--TODO i18n pluralization-->
+        <!-- <h3 mat-subheader>Your created Link</h3> -->
+        <mat-list-item *ngIf="shortenedLinks[0]">
+          <mat-icon mat-list-icon>link</mat-icon>
+          <h4 mat-line>
+            <!-- <a href="https://{{ urlName }}/{{ link[1] }}"> -->
+            <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{ link[1] }}">
+              https://{{ urlName }}/{{ link[1] }}
+            </a>
+          </h4>
+          <p mat-line>
+            <a href="{{ link[0] }}">
+              {{ link[0] }}
+            </a>
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
 
-    </div>
+    <!--</div>-->
+    <!--</div>-->
 
   </div>
 </div>
