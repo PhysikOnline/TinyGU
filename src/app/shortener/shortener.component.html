@@ -21,9 +21,16 @@
         <!--TODO remove value property-->
 
         <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
-        <input matInput placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
-          [formControl]="urlFormControl" [errorStateMatcher]="matcher">
-        <mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>
+        <textarea matInput="url" placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
+                  [formControl]="urlFormControl" [errorStateMatcher]="matcher" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="10"></textarea>
+        <!--<input matInput="url" placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"-->
+                  <!--[formControl]="urlFormControl" [errorStateMatcher]="matcher">-->
+
+        <button matSuffix mat-icon-button (click)="onShorten()" [disabled]="urlFormControl.hasError('url')" fxFlexFill matTooltip="create link">
+          <mat-icon>play_circle_filled</mat-icon>
+        </button>
+        <!--<mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>-->
+
         <!-- info clear send add_circle forward -->
 
         <mat-error *ngIf="urlFormControl.hasError('pattern')">
@@ -40,7 +47,7 @@
       <!--<div class="row-div">-->
       <!--<div class="after-row-div" fxLayout="row" fxLayout.lt-sm="column" fxFlexOffset="25%" fxFlex="50" fxLayoutAlign="space-between">-->
 
-      <button mat-raised-button color="accent" [disabled]="urlFormControl.hasError('pattern')" (click)="onShorten()" i18n="shorten command on Button@@shortener.btnShorten">shorten</button>
+      <!--<button mat-raised-button color="accent" [disabled]="urlFormControl.hasError('pattern')" (click)="onShorten()" i18n="shorten command on Button@@shortener.btnShorten">shorten</button>-->
 
       <mat-form-field floatPlaceholder="never" (keyup.enter)="onShorten()">
         <input matInput placeholder="custom url" [(ngModel)]="shortURL" [formControl]="shortUrlFormControl">
@@ -88,12 +95,12 @@
 
     <!-- CARDS(which appear after creating links) -->
     <!--TODO scrollbar-->
-    <!--https://github.com/MurhafSousli/ngx-scrollbar-->
-    <!--https://github.com/jfcere/ngx-malihu-scrollbar-->
+    <!-- https://github.com/MurhafSousli/ngx-scrollbar -->
+    <!-- https://github.com/jfcere/ngx-malihu-scrollbar -->
     <!--<div fxFlex="1 1 max-content">-->
     <!--<div class="card-container" fxLayout="column">-->
-    <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationStarted($event)"
-      (@bounce.done)="animationEnded($event)" class="link-card">
+    <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationEvent($event)"
+      (@bounce.done)="animationEvent($event)" class="link-card">
       <mat-list>
         <!--TODO i18n pluralization-->
         <!-- <h3 mat-subheader>Your created Link</h3> -->

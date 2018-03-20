@@ -103,10 +103,7 @@ export class ShortenerComponent implements OnInit {
     this.api.authorizeUser('User2', 'password').subscribe(console.log);
   }
 
-  animationStarted($event) {
-    console.log($event);
-  }
-  animationEnded($event) {
+  animationEvent($event) {
     console.log($event);
   }
 

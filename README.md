@@ -16,7 +16,7 @@ settings:
 <!-- generate a TOC from the markdown code online: http://ecotrust-canada.github.io/markdown-toc/ -->
 
 - [Requirements](#requirements)
-- [Continuous Integration & Deployment](#continuous-integration-deployment)
+- [Continuous Integration & Deployment](#continuous-integration--deployment)
   - [Travis-CI](#travis-ci)
   - [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
   - [Heroku](#heroku)
@@ -31,7 +31,7 @@ settings:
   - [Update Angular](#update-angular)
   - [Versioning](#versioning)
   - [yarn](#yarn)
-  - [TSLint & Prettier](#tslint-prettier)
+  - [TSLint & Prettier](#tslint--prettier)
 - [Localization](#localization)
   - [i18n](#i18n)
   - [Translation Tools](#translation-tools)
