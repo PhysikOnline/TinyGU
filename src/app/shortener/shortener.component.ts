@@ -1,11 +1,32 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  useAnimation,
+  AnimationEvent,
+} from '@angular/animations';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Link, LinkAPImodel } from '../models/link';
 import { HttpResponseModalComponent } from '../modal/http-response-modal.component';
 import { LoginReminderModalComponent } from '../modal/login-reminder-modal.component';
+import {
+  bounceIn,
+  bounceOut,
+  bounceInUp,
+  bounceInDown,
+  fadeIn,
+  fadeInUp,
+  slideInDown,
+  flipInX,
+  shake,
+} from 'ngx-animate';
 
 // some crazy page to generate the regex just with some samples!
 // http://txt2re.com http://regex.inginf.units.it/
@@ -38,10 +59,24 @@ const GOETHE_URL_REGEX = new RegExp(
 );
 // const COMBINED_URL_REGEX = new RegExp(URL_REGEX.source + GOETHE_URL_REGEX.source);
 
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
 @Component({
   selector: 'app-shortener',
   templateUrl: './shortener.component.html',
   styleUrls: ['./shortener.component.scss'],
+  animations: [
+    trigger('bounce', [
+      transition(':enter', useAnimation(bounceIn)),
+      transition('void => *', useAnimation(bounceOut)),
+    ]),
+    trigger('error', [transition('* => *', useAnimation(shake))]),
+  ],
 })
 export class ShortenerComponent implements OnInit {
   constructor(public dialog: MatDialog, private api: ApiService) {}
@@ -51,6 +86,8 @@ export class ShortenerComponent implements OnInit {
   shortURL = '';
   loggedInVar = true; // TODO set false
   shortenedLinks = [];
+  readonly urlName = location.host;
+  bounce: any;
 
   urlFormControl = new FormControl('', [
     Validators.pattern(URL_REGEX),
@@ -60,8 +97,14 @@ export class ShortenerComponent implements OnInit {
   // TODO update shorturl check
   shortUrlFormControl = new FormControl('', Validators.minLength(2));
 
+  matcher = new MyErrorStateMatcher();
+
   ngOnInit() {
     this.api.authorizeUser('User2', 'password').subscribe(console.log);
+  }
+
+  animationEvent($event) {
+    console.log($event);
   }
 
   onShorten() {
@@ -93,19 +136,15 @@ export class ShortenerComponent implements OnInit {
       // http://reactivex.io/documentation/operators/subscribe.html
       this.api.createLink(link).subscribe(
         data => {
-          console.log('onNext---->>>>>>>>>>>>>>>>>>>>');
-          console.log(data);
-          console.log(data.shortUrl);
+          console.log('onNext---->>>>>>>>>>>>>>>>>>>>', data, data.shortUrl);
           // successMessage = [data.longUrl, data.shortUrl, (data.owner ? '1' : '0'), data.dateCreated]; // to much data
           successMessage = [data.longUrl, data.shortUrl];
           this.shortenedLinks.unshift([data.longUrl, data.shortUrl]);
-          console.log(this.shortenedLinks);
-          console.log('<<<<<<<<<<<<<<<<<<<<----onNext');
+          console.log(this.shortenedLinks, '<<<<<<<<<<<<<<<<<<<<----onNext');
         },
         err => {
-          console.log('ERROR---->>>>>>>>>>>>>>>>>>>>');
-          console.error(err); // whole error; "err.error.error" -> actual error message; "err.message" -> generated error message
-          console.error(err.error.error);
+          console.log('ERROR---->>>>>>>>>>>>>>>>>>>>', err, err.error.error);
+          // whole error; "err.error.error" -> actual error message; "err.message" -> generated error message
           // this.dialog.open(HttpResponseModalComponent, {
           // data: { errorMessage: err.error.error },
           // });

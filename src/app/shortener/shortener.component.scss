@@ -1,93 +1,106 @@
-@import "../../../node_modules/@angular/material/prebuilt-themes/pink-bluegrey";
+// @import '../../../node_modules/@angular/material/prebuilt-themes/pink-bluegrey';
+@import '~@angular/material/theming';
 
-$input-padding: 0px 0px 13.5px 16px;   //padding: 0px 0px 8px 16px;
+$input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 
-::ng-deep .input-box .mat-input-infix { //use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
-      @extend .mat-elevation-z8;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: $input-padding;
-      border-radius: 4px 4px 0 0;
-      //@extend .mat-elevation-z5;
-      //height: 28px;
+//use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
+
+// CSS for "text field box" > https://material-components-web.appspot.com/text-field.html
+::ng-deep .input-box .mat-form-field-wrapper .mat-form-field-flex {
+  @include mat-elevation(8);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px 4px 0 0; // border in the top corners
+
+  border: 0px;
+  .mat-input-infix *{
+    //margin: -5px 10px 5px 10px;
+    //align-self: center;
+  }
+  .mat-form-field-suffix {
+    //align-self: center;
+  }
+  .mat-input-suffix, .mat-form-field-suffix, .mat-form-field-infix input, .mat-form-field-infix * {
+  //.mat-form-field-infix input, .mat-form-field-infix * {
+    padding: 0px 10px 5px 10px;
+    margin-top: -5px;
+  }
+  .mat-icon {
+    //cursor: pointer;
+    padding-left: 5px;
+    font-size: x-large;
+    margin-top: -15px;
+  }
 }
 
-::ng-deep .input-box  .mat-input-placeholder {
-  padding: $input-padding;
-  position: initial;
+.input-container {
+  min-width: 40%;
+  max-width: 95%;
+  //width: 70%;
 }
 
-::ng-deep .mat-input-element{
+// ::ng-deep .mat-form-field-label-wrapper > *, .mat-input-placeholder-wrapper > *, .mat-form-field-placeholder-wrapper > * {
+::ng-deep .mat-form-field-label {
+  // @extend .input-box;
+}
+
+// ::ng-deep .mat-input-infix, .mat-form-field-infix {
+//   margin: 0 10px 5px 10px;
+//   border: 0px;
+// }
+
+// ::ng-deep .mat-input-suffix, .mat-form-field-suffix {
+//   @extend .mat-form-field-infix;
+//   // margin: 0 10px 5px 10px;
+//   padding: 0px 0 7px 0;
+// }
+
+::ng-deep .mat-input-element,
+.mat-form-field-autofill-control {
+  // padding: 20px;
+}
+
+// ::ng-deep .input-box .mat-input-placeholder {
+//   padding: $input-padding;
+//   position: initial;
+// }
+
+::ng-deep .mat-input-element {
   //padding: 8px !important;
 }
 
-.search-box-div{
+.search-box-div {
   //display: flex;
   //flex-direction: row;
   //flex: 1;
 }
 
-.row-div{
+.row-div {
+  //width: 100%;
+
   //flex-direction: row;
   //flex-grow: 1 0 auto;
-  width: 100%;
   //align-items: stretch;
 }
 
-.after-row-div{
+.after-row-div {
+  //align-items: center;
+
   //offset-before: 25%;
   //offset-start: 25%;
-  align-items: center;
   //min-width: 300px;
   //flex-basis: 50%;
 }
 
 .after-row-div button {
-  margin-top: 10px;
+  //margin-top: 10px;
 }
 
+.link-card {
+  //max-width: 800px;
+}
 
-///deep/ .mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-placeholder-wrapper .mat-form-field-placeholder {
-//  transform: translateY(-1.28125em) scale(.15) perspective(100px) translateZ(.001px);
-//  -ms-transform: translateY(-1.28125em) scale(.15);
-//  width: 133.33333%
-//}
-
-///deep/ .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
-//  transform: translateY(-0.9em) scale(.75) perspective(100px) translateZ(.001px);
-//  -ms-transform: translateY(-0.9em) scale(.75);
-//  width: 133.33333%
-//}
-
-//.mat-form-field-placeholder {
-//  position: absolute;
-//  left: 0;
-//  font: inherit;
-//  pointer-events: none;
-//  width: 100%;
-//  white-space: nowrap;
-//  text-overflow: ellipsis;
-//  overflow: hidden;
-//  transform: perspective(100px);
-//  -ms-transform: none;
-//  transform-origin: 0 0;
-//  transition: transform .4s cubic-bezier(.25, .8, .25, 1),
-//              color .4s cubic-bezier(.25, .8, .25, 1),
-//              width .4s cubic-bezier(.25, .8, .25, 1);
-//  display: none
-//}
-
-//.mdc-textfield__label {
-//  position: absolute;
-//  bottom: 8px;
-//  left: 0;
-//  -webkit-transform-origin: left top;
-//  transform-origin: left top;
-//  transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1),
-//              -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
-//  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
-//              color 180ms cubic-bezier(0.4, 0, 0.2, 1);
-//  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
-//              color 180ms cubic-bezier(0.4, 0, 0.2, 1),
-//              -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
-//  color: rgba(0, 0, 0, 0.5);
-//  cursor: text; }
+.card-container {
+  //max-height: fit-content;
+  //overflow: hidden;
+  //overflow-y: scroll;
+}

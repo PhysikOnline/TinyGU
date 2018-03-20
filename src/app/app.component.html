@@ -1,8 +1,13 @@
-<mat-sidenav-container class="main-side-nav" fullscreen>
+<!--<mat-sidenav-container class="main-side-nav" fullscreen>-->
+<!--
+https://stackblitz.com/angular/vvpdgajqrrd?file=app%2Fsidenav-mode-example.html
+https://stackblitz.com/angular/pynvnarggaa?file=app%2Fsidenav-autosize-example.html
+https://material.angular.io/components/sidenav/examples
+-->
+<mat-sidenav-container fullscreen>
   <!--style="background-color: #2196F3">-->
   <!--TODO: remove inline style style="background-color: #005ea8"-->
 
-  <img src="assets/goethe_head_blue.svg" id="goethe-head">
   <!--<img id="goethe-head">-->
   <!--<a href='https://github.com/PhysikOnline/TinyGU' style='position:fixed;padding:5px 45px;width:128px;bottom:50px;left:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #182c42, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#182c42;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px;'>Fork me on GitHub</a>-->
   <!--<a href='https://github.com/PhysikOnline/TinyGU' style='position:fixed;padding:5px 45px;width:128px;bottom:50px;right:-50px;-webkit-transform:rotate(315deg);-moz-transform:rotate(315deg);-ms-transform:rotate(315deg);transform:rotate(315deg);box-shadow:0 0 0 3px #182c42, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#182c42;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px;'>Fork me on GitHub</a>-->
@@ -11,21 +16,30 @@
     <app-side-nav-list (sideNavClose)="start.close()"></app-side-nav-list>
   </mat-sidenav>
 
-  <div fxLayout="column" fxFlexFill>
+  <mat-sidenav-content>
+    <img src="assets/goethe_head_blue.svg" id="goethe-head">
+  <!-- flex-layout docu: https://github.com/angular/flex-layout/wiki/Declarative-API-Overview/c080d0b5d567aeb8dbafbd8a3ff3c23be8f16882 -->
+  <!-- fxFlex  = flex-grow, flex-shrink, flex-basis -->
+  <!-- flexbox tutorial: http://www.on-design.de/tutor/html5_css3/css3/flexbox.html -->
+  <!-- flex basis detailed tut: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis -->
+  <div fxLayout="column">
     <!--id="goethe-head">-->
-
-    <!--<div fxFlex="">-->
+    <!--<div>-->
     <app-toolbar (sideNavOpen)="start.open()"></app-toolbar>
     <!--</div>-->
 
-    <div fxFlex>
-      <router-outlet></router-outlet>
-    </div>
+    <!--<div fxFlexFill>-->
+    <router-outlet></router-outlet>
+    <!--</div>-->
+
+    <!--<div fxFlex="1 0 max-content"></div>-->
+    <!--<div fxFill></div>-->
 
     <!--<div fxFlex>-->
     <app-footer></app-footer>
     <!--</div>-->
 
   </div>
+  </mat-sidenav-content>
 
 </mat-sidenav-container>

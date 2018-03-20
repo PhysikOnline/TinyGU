@@ -16,9 +16,11 @@ settings:
 <!-- generate a TOC from the markdown code online: http://ecotrust-canada.github.io/markdown-toc/ -->
 
 - [Requirements](#requirements)
-- [Continuous Integration](#continuous-integration)
+- [Continuous Integration & Deployment](#continuous-integration--deployment)
   - [Travis-CI](#travis-ci)
   - [Automatic deployment on GitHub Pages](#automatic-deployment-on-github-pages)
+  - [Heroku](#heroku)
+  - [Dokku](#dokku)
 - [Material Design](#material-design)
   - [Color Style](#color-style)
 - [Angular Modules](#angular-modules)
@@ -29,7 +31,7 @@ settings:
   - [Update Angular](#update-angular)
   - [Versioning](#versioning)
   - [yarn](#yarn)
-  - [TSLint & Prettier](#tslint-prettier)
+  - [TSLint & Prettier](#tslint--prettier)
 - [Localization](#localization)
   - [i18n](#i18n)
   - [Translation Tools](#translation-tools)
@@ -108,7 +110,10 @@ https://github.com/dwyl/repo-badges
 * https://github.com/angular/flex-layout
 * ~~https://github.com/trimox/angular-mdc-web (only for the mdc-textfield-box)~~
 
-## Continuous Integration
+## Continuous Integration & Deployment
+
+[Preview and edit code on Stackblitz](https://stackblitz.com/github/PhysikOnline/TinyGU)  
+[Preview and edit code on Stackblitz (develop)](https://stackblitz.com/github/PhysikOnline/TinyGU/tree/develop)
 
 ### Travis-CI
 
@@ -125,6 +130,7 @@ Not set up yet but generally possible would be an integration of greenkeeper.io 
 [![DEMO](https://img.shields.io/badge/DEMO-physikonline.github.io%2FTinyGU-blue.svg?style=for-the-badge)](https://PhysikOnline.github.io/TinyGU/)
 
 ### Heroku
+
 <details>
   <summary>Links</summary>
     <a href="https://github.com/heroku/heroku-buildpack-nginx">https://github.com/heroku/heroku-buildpack-nginx</a><br>

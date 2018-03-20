@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  //height: 100%;
 }
 
 //#goethe-head {
@@ -37,11 +37,16 @@ body {
   }
 }
 
+// makes the Logo clickable without being framed
 .no-style-button,
 .no-style-button:focus {
   outline: 0px; // disables the border around an focused element
   cursor: pointer;
   //padding: 0px 1em;
+  &:hover {
+    color: hsla(0, 0%, 85%, 1);
+    transform: rotate(-5deg);
+  }
 }
 
 ::ng-deep .langSelect div.mat-select-arrow-wrapper {
@@ -50,4 +55,9 @@ body {
 
 ::ng-deep .langSelect.mat-select {
   display: inline;
+}
+
+// prevents a y scrollbar when using mat-cards
+.mat-drawer-content {
+  //overflow: unset;
 }
