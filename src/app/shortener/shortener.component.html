@@ -17,16 +17,29 @@
       <!-- main input field -->
       <!-- TODO resizeToFitContent > https://material.angular.io/components/input/api -->
       <!-- TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2 -->
-      <mat-form-field fxFlexFill floatPlaceholder="never" class="input-box" (keyup.enter)="onShorten()" [@error]="matcher">
+      <mat-form-field fxFlexFill
+                      floatPlaceholder="never"
+                      class="input-box"
+                      (keyup.enter)="onShorten()"
+                      [@error]="onAddErrAnim"
+                      [ngStyle]="{'width.rem': width / 1.45}">
         <!--TODO remove value property-->
 
         <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
-        <textarea matInput="url" placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"
-                  [formControl]="urlFormControl" [errorStateMatcher]="matcher" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="10"></textarea>
-        <!--<input matInput="url" placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"-->
-                  <!--[formControl]="urlFormControl" [errorStateMatcher]="matcher">-->
+        <!--<textarea matInput="url" placeholder="http://example.uni-frankfurt.de/..." value="www.uni-frankfurt.de/search?q=" [(ngModel)]="inputURL"-->
+                  <!--[formControl]="urlFormControl" [errorStateMatcher]="matcher" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="10"></textarea>-->
+        <input matInput="url"
+               placeholder="http://example.uni-frankfurt.de/..."
+               value="www.uni-frankfurt.de/search?q="
+               [(ngModel)]="inputURL"
+               [formControl]="urlFormControl"
+               [errorStateMatcher]="matcher"
+               (keydown)="width = $event.srcElement.value.length">
 
-        <button matSuffix mat-icon-button (click)="onShorten()" [disabled]="urlFormControl.hasError('url')" fxFlexFill matTooltip="create link">
+        <button matSuffix mat-icon-button
+                (click)="onShorten()"
+                [disabled]="urlFormControl.hasError('url')"
+                fxFlexFill matTooltip="create link">
           <mat-icon>play_circle_filled</mat-icon>
         </button>
         <!--<mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>-->

@@ -5,6 +5,13 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 
 //use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
 
+.input-box {
+  min-width: 30vw;
+  max-width: 98vw;
+  width: 30vw;
+  text-align: center;
+}
+
 // CSS for "text field box" > https://material-components-web.appspot.com/text-field.html
 ::ng-deep .input-box .mat-form-field-wrapper .mat-form-field-flex {
   @include mat-elevation(8);
