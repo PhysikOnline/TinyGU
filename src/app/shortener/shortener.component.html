@@ -22,7 +22,7 @@
                       class="input-box"
                       (keyup.enter)="onShorten()"
                       [@error]="onAddErrAnim"
-                      [ngStyle]="{'width.rem': width / 1.45}">
+                      [ngStyle]="{'width.rem': flexInputWidth / 1.45}">
         <!--TODO remove value property-->
 
         <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
@@ -34,7 +34,7 @@
                [(ngModel)]="inputURL"
                [formControl]="urlFormControl"
                [errorStateMatcher]="matcher"
-               (keydown)="width = $event.srcElement.value.length">
+               (keydown)="flexInputWidth = $event.srcElement.value.length">
 
         <button matSuffix mat-icon-button
                 (click)="onShorten()"

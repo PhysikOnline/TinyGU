@@ -94,6 +94,7 @@ export class ShortenerComponent implements OnInit {
   shortenedLinks = [];
   readonly urlName = location.host;
   bounce: any;
+  flexInputWidth: number = 0;
 
   urlFormControl = new FormControl('', [
     Validators.pattern(URL_REGEX),
