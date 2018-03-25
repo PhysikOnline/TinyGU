@@ -22,7 +22,7 @@
                       class="input-box"
                       (keyup.enter)="onShorten()"
                       [@error]="onAddErrAnim"
-                      [ngStyle]="{'width.rem': flexInputWidth / 1.45}">
+                      [ngStyle]="{ 'width.px': flexInputWidth }">
         <!--TODO remove value property-->
 
         <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
@@ -34,7 +34,10 @@
                [(ngModel)]="inputURL"
                [formControl]="urlFormControl"
                [errorStateMatcher]="matcher"
-               (keydown)="flexInputWidth = $event.srcElement.value.length">
+               (paste)="resizeInput()"
+               (cut)="resizeInput()"
+               (input)="resizeInput()"
+               autocomplete="off">
 
         <button matSuffix mat-icon-button
                 (click)="onShorten()"
@@ -51,6 +54,7 @@
         </mat-error>
       </mat-form-field>
 
+      <span #invisibleText id="invisibleTextID">{{ inputURL }}</span>
 
       <!--</div>-->
       <!--</div>-->

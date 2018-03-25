@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input, ElementRef, ViewChild } from '@angular/core';
 import {
   trigger,
   state,
@@ -86,11 +86,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class ShortenerComponent implements OnInit {
   constructor(public dialog: MatDialog, private api: ApiService) {}
 
+  @ViewChild('invisibleText') invTextER: ElementRef;
+
   onAddErrAnim: boolean = false;
-  moreOptions = false;
-  inputURL = '';
-  shortURL = '';
-  loggedInVar = true; // TODO set false
+  moreOptions: boolean = false;
+  inputURL: string = '';
+  shortURL: string = '';
+  loggedInVar: boolean = true; // TODO set false
   shortenedLinks = [];
   readonly urlName = location.host;
   bounce: any;
@@ -112,6 +114,21 @@ export class ShortenerComponent implements OnInit {
 
   animationEvent($event) {
     console.log($event);
+  }
+
+  resizeInput() {
+    // without setTimeout the width gets updated to the previous length
+    setTimeout ( () => {
+
+      const minWidth = 64;
+
+      if (this.invTextER.nativeElement.offsetWidth > minWidth) {
+        this.flexInputWidth = this.invTextER.nativeElement.offsetWidth + 50;
+      } else {
+        this.flexInputWidth = minWidth;
+      }
+
+    }, 0);
   }
 
   onShorten() {
@@ -173,7 +190,7 @@ export class ShortenerComponent implements OnInit {
       // TODO input or inputError blinking, vibrating, animation....
     }
       }
-    }, 0 )
+    }, 0 );
   }
 
   onTest() {

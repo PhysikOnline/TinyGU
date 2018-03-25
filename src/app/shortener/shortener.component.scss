@@ -18,7 +18,7 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 4px 4px 0 0; // border in the top corners
 
-  border: 0px;
+  border: 0;
   .mat-input-infix *{
     //margin: -5px 10px 5px 10px;
     //align-self: center;
@@ -28,7 +28,7 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   }
   .mat-input-suffix, .mat-form-field-suffix, .mat-form-field-infix input, .mat-form-field-infix * {
   //.mat-form-field-infix input, .mat-form-field-infix * {
-    padding: 0px 10px 5px 10px;
+    padding: 0 10px 5px 10px;
     margin-top: -5px;
   }
   .mat-icon {
@@ -48,6 +48,22 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 // ::ng-deep .mat-form-field-label-wrapper > *, .mat-input-placeholder-wrapper > *, .mat-form-field-placeholder-wrapper > * {
 ::ng-deep .mat-form-field-label {
   // @extend .input-box;
+}
+
+// prevents glitches:
+::ng-deep .mat-form-field-flex {
+  //width: 102% !important;
+}
+
+#invisibleTextID {
+  white-space: pre; //nowrap;
+
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+
+  //visibility: auto;
+  //color: red
 }
 
 // ::ng-deep .mat-input-infix, .mat-form-field-infix {
