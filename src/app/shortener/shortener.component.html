@@ -1,15 +1,17 @@
-<div fxFlex>
-  <div fxLayoutAlign="start center" fxLayout="column">
+<!--<div>&lt;!&ndash; fxFlex>&ndash;&gt;-->
+  <div class="shortener-component-grid"><!-- fxLayoutAlign="start center" fxLayout="column">-->
 
-    <!-- image above input field -->
-    <div fxFlex="auto" fxHide.xs="true">
-      <!--TODO position fixed? relative?-->
-      <img src="assets/link_icon.png" id="tinygu-logo">
-    </div>
 
     <!-- div for INPUT, BUTTONS, SHORTLINK_INPUT -->
     <!--<div fxFlex="1 0 fit-content">-->
-    <div fxLayout="column" fxLayoutAlign="start center" fxFlexOffset.gt-sm="10px" class="input-container">
+    <div class="input-container" fxLayout="column" fxLayoutAlign="start center" fxFlexOffset.gt-sm="10px">
+
+      <!-- image above input field -->
+      <div fxFlex="auto" fxHide.xs="true">
+        <!--TODO transition to very small icon after links have been generated-->
+        <!--TODO position fixed? relative?-->
+        <img src="assets/link_icon.png" id="tinygu-logo">
+      </div>
 
       <!--<div class="row-div" fxLayoutAlign="center none">-->
       <!--<div class="after-row-div" fxFlex.lt-sm="90">-->
@@ -17,12 +19,12 @@
       <!-- main input field -->
       <!-- TODO resizeToFitContent > https://material.angular.io/components/input/api -->
       <!-- TODO https://stackoverflow.com/questions/38145283/grow-width-of-input-on-focus-in-angular2 -->
-      <mat-form-field fxFlexFill
-                      floatPlaceholder="never"
+      <mat-form-field floatPlaceholder="never"
                       class="input-box"
                       (keyup.enter)="onShorten()"
                       [@error]="onAddErrAnim"
                       [ngStyle]="{ 'width.px': flexInputWidth }">
+                      <!--fxFlexFill>-->
         <!--TODO remove value property-->
 
         <!-- TODO www.uni-frankfurt.de/search?utf8=✓&q= doesnt work because of special char?!? -->
@@ -42,7 +44,8 @@
         <button matSuffix mat-icon-button
                 (click)="onShorten()"
                 [disabled]="urlFormControl.hasError('url')"
-                fxFlexFill matTooltip="create link">
+                matTooltip="create link">
+                <!--fxFlexFill>-->
           <mat-icon>play_circle_filled</mat-icon>
         </button>
         <!--<mat-icon matSuffix (click)="onShorten()">play_circle_filled</mat-icon>-->
@@ -54,7 +57,7 @@
         </mat-error>
       </mat-form-field>
 
-      <span #invisibleText id="invisibleTextID">{{ inputURL }}</span>
+      <span #invisibleText id="invisible-text-id">{{ inputURL }}</span>
 
       <!--</div>-->
       <!--</div>-->
@@ -115,31 +118,31 @@
     <!-- https://github.com/MurhafSousli/ngx-scrollbar -->
     <!-- https://github.com/jfcere/ngx-malihu-scrollbar -->
     <!--<div fxFlex="1 1 max-content">-->
-    <!--<div class="card-container" fxLayout="column">-->
-    <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationEvent($event)"
-      (@bounce.done)="animationEvent($event)" class="link-card">
-      <mat-list>
-        <!--TODO i18n pluralization-->
-        <!-- <h3 mat-subheader>Your created Link</h3> -->
-        <mat-list-item *ngIf="shortenedLinks[0]">
-          <mat-icon mat-list-icon>link</mat-icon>
-          <h4 mat-line>
-            <!-- <a href="https://{{ urlName }}/{{ link[1] }}"> -->
-            <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{ link[1] }}">
-              https://{{ urlName }}/{{ link[1] }}
-            </a>
-          </h4>
-          <p mat-line>
-            <a href="{{ link[0] }}">
-              {{ link[0] }}
-            </a>
-          </p>
-        </mat-list-item>
-      </mat-list>
-    </mat-card>
-
-    <!--</div>-->
+    <div class="card-container" fxLayout="column">
+    <!--<div class="card-container">-->
+      <mat-card *ngFor="let link of shortenedLinks" fxFlexOffset=".5em" [@bounce]="bounce" (@bounce.start)="animationEvent($event)"
+        (@bounce.done)="animationEvent($event)" class="link-card">
+        <mat-list>
+          <!--TODO i18n pluralization-->
+          <!-- <h3 mat-subheader>Your created Link</h3> -->
+          <mat-list-item *ngIf="shortenedLinks[0]">
+            <mat-icon mat-list-icon>link</mat-icon>
+            <h4 mat-line>
+              <!-- <a href="https://{{ urlName }}/{{ link[1] }}"> -->
+              <a href="https://tinygu-staging-api.physikelearning.de/api/v1/redirect/{{ link[1] }}">
+                https://{{ urlName }}/{{ link[1] }}
+              </a>
+            </h4>
+            <p mat-line>
+              <a href="{{ link[0] }}">
+                {{ link[0] }}
+              </a>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
     <!--</div>-->
 
   </div>
-</div>
+<!--</div>-->

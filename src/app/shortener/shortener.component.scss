@@ -3,7 +3,28 @@
 
 $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 
-//use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
+.shortener-component-grid {
+  display: inline-grid;
+  grid-template:
+    "input" min-content
+    //"cards" minmax(50px, 1fr) / max(95vw)
+    "cards" 50vh / minmax(10vw, 95vw)
+  ;
+
+  .input-container {
+    grid-area: input;
+    display: flex;
+
+    min-width: 40%;
+    max-width: 95%;
+    //width: 70%;
+  }
+
+  .card-container {
+    grid-area: cards;
+    display: flex;
+  }
+}
 
 .input-box {
   min-width: 30vw;
@@ -12,13 +33,14 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   text-align: center;
 }
 
+//use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
 // CSS for "text field box" > https://material-components-web.appspot.com/text-field.html
 ::ng-deep .input-box .mat-form-field-wrapper .mat-form-field-flex {
   @include mat-elevation(8);
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 4px 4px 0 0; // border in the top corners
-
   border: 0;
+
   .mat-input-infix *{
     //margin: -5px 10px 5px 10px;
     //align-self: center;
@@ -39,12 +61,6 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   }
 }
 
-.input-container {
-  min-width: 40%;
-  max-width: 95%;
-  //width: 70%;
-}
-
 // ::ng-deep .mat-form-field-label-wrapper > *, .mat-input-placeholder-wrapper > *, .mat-form-field-placeholder-wrapper > * {
 ::ng-deep .mat-form-field-label {
   // @extend .input-box;
@@ -55,7 +71,7 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   //width: 102% !important;
 }
 
-#invisibleTextID {
+#invisible-text-id {
   white-space: pre; //nowrap;
 
   position: absolute;

@@ -61,3 +61,32 @@ body {
 .mat-drawer-content {
   //overflow: unset;
 }
+
+.sidenav-content-grid {
+  height: 100%;
+  display: grid;
+  grid-template:
+    "header   header  header"   min-content
+    "......   content ......"  1fr
+    "footer   footer  footer"   min-content / auto // auto auto
+;
+  // <-- equals:
+  //grid-template-areas:
+  //  "header   header  header"
+  //  "......   content ......"
+  //  "footer   footer  footer";
+  //grid-template-columns: auto auto auto;
+  //grid-template-rows: min-content 1fr min-content;
+
+  .header {
+    grid-area: header;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}
