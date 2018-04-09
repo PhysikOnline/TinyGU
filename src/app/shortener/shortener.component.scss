@@ -39,7 +39,7 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 .input-box {
   min-width: 300px;
   max-width: 98vw;
-  width: 30vw;
+  width: 35vw !important; // TODO
   text-align: center;
 }
 
@@ -56,14 +56,17 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
     //margin: -5px 10px 5px 10px;
     //align-self: center;
   }
+
   .mat-form-field-suffix {
     //align-self: center;
   }
+
   .mat-input-suffix, .mat-form-field-suffix, .mat-form-field-infix input, .mat-form-field-infix * {
   //.mat-form-field-infix input, .mat-form-field-infix * {
     padding: 0 10px 5px 10px;
-    margin-top: -5px;
+    //margin-top: -5px;
   }
+
   .mat-icon {
     //cursor: pointer;
     padding-left: 5px;
