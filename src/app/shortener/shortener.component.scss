@@ -37,9 +37,9 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 }
 
 .input-box {
-  min-width: 300px;
+  min-width: 300px;//max(300px, 35vw);
   max-width: 98vw;
-  width: 35vw !important; // TODO
+  //width: 35vw;1
   text-align: center;
 }
 
