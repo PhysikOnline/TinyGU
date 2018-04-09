@@ -4,12 +4,14 @@
 $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
 
 .shortener-component-grid {
-  display: inline-grid;
+  display: grid;
+  justify-self: center;
   grid-template:
     "input" min-content
-    //"cards" minmax(50px, 1fr) / max(95vw)
-    "cards" 50vh / minmax(10vw, 95vw)
-  ;
+    //TODO fill rest of available space
+    "cards" 60vh / minmax(10vw, 95vw)
+    //"cards" minmax(50px, 1fr) / minmax(10vw, 95vw)
+    ;
 
   .input-container {
     grid-area: input;
@@ -23,15 +25,24 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   .card-container {
     grid-area: cards;
     display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    // https://stackoverflow.com/questions/3296644/hiding-the-scrollbar-on-an-html-page/25561646#25561646
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
 .input-box {
-  min-width: 30vw;
+  min-width: 300px;
   max-width: 98vw;
   width: 30vw;
   text-align: center;
 }
+
 
 //use ::ng-deep instead of /deep/ since /deep/ and >>> are deprecated
 // CSS for "text field box" > https://material-components-web.appspot.com/text-field.html
@@ -61,6 +72,7 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   }
 }
 
+
 // ::ng-deep .mat-form-field-label-wrapper > *, .mat-input-placeholder-wrapper > *, .mat-form-field-placeholder-wrapper > * {
 ::ng-deep .mat-form-field-label {
   // @extend .input-box;
@@ -82,26 +94,25 @@ $input-padding: 0px 0px 13.5px 16px; //padding: 0px 0px 8px 16px;
   //color: red
 }
 
-// ::ng-deep .mat-input-infix, .mat-form-field-infix {
+ ::ng-deep .mat-input-infix, .mat-form-field-infix {
 //   margin: 0 10px 5px 10px;
 //   border: 0px;
-// }
+ }
 
-// ::ng-deep .mat-input-suffix, .mat-form-field-suffix {
+ ::ng-deep .mat-input-suffix, .mat-form-field-suffix {
 //   @extend .mat-form-field-infix;
 //   // margin: 0 10px 5px 10px;
 //   padding: 0px 0 7px 0;
-// }
+ }
 
-::ng-deep .mat-input-element,
-.mat-form-field-autofill-control {
+::ng-deep .mat-input-element, .mat-form-field-autofill-control {
   // padding: 20px;
 }
 
-// ::ng-deep .input-box .mat-input-placeholder {
+ ::ng-deep .input-box .mat-input-placeholder {
 //   padding: $input-padding;
 //   position: initial;
-// }
+ }
 
 ::ng-deep .mat-input-element {
   //padding: 8px !important;

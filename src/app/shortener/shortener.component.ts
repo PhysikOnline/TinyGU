@@ -99,7 +99,7 @@ export class ShortenerComponent implements OnInit {
   flexInputWidth: number = 0;
 
   urlFormControl = new FormControl('', [
-    Validators.pattern(URL_REGEX),
+    // Validators.pattern(URL_REGEX), // TODO: causes "[Violation] 'input' handler took 158ms"
     Validators.pattern(GOETHE_URL_REGEX),
   ]);
   // urlFormControl = new FormControl('inputURL', [Validators.pattern(URL_REGEX), Validators.pattern(GOETHE_URL_REGEX)]);

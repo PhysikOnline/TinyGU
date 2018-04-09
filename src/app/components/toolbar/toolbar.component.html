@@ -14,13 +14,22 @@
 
   <div>
 
-    <button mat-icon-button matTooltip="Language" (click)=select.open()>
+    <!--<button mat-icon-button matTooltip="Language" (click)=select.open()>-->
+      <!--<mat-icon>language</mat-icon>-->
+      <!--<mat-select #select [(ngModel)]="setLang" class="lang-select">-->
+        <!--<mat-option (click)="changeLang()" value="en" i18n="choose english as language@@app.lang.english">English</mat-option>-->
+        <!--<mat-option (click)="changeLang()" value="de" i18n="choose german as language@@app.lang.german">Deutsch</mat-option>-->
+      <!--</mat-select>-->
+    <!--</button>-->
+
+    <!--<button mat-icon-button (click)=langMenu.open()>-->
+    <button mat-icon-button [matMenuTriggerFor]="langMenu">
       <mat-icon>language</mat-icon>
-      <mat-select #select [(ngModel)]="setLang" class="lang-select">
-        <mat-option (click)="changeLang()" value="en" i18n="choose english as language@@app.lang.english">English</mat-option>
-        <mat-option (click)="changeLang()" value="de" i18n="choose german as language@@app.lang.german">Deutsch</mat-option>
-      </mat-select>
     </button>
+    <mat-menu #langMenu="matMenu">
+      <button mat-menu-item (click)="changeLang()" value="en">English</button>
+      <button mat-menu-item (click)="changeLang()" value="de">Deutsch</button>
+    </mat-menu>
 
     <!-- help_outline / help / info_outline / info -->
     <button mat-icon-button matTooltip="Help" (click)=openHelpAsModal()>
