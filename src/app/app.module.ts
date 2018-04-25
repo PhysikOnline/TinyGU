@@ -16,7 +16,6 @@ import { MatDialogModule } from '@angular/material';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
-import { LoginReminderModalComponent } from './modal/login-reminder-modal.component';
 import { ComponentsModule } from './components/components.module';
 import { AccountModule } from './account/account.module';
 
@@ -28,8 +27,7 @@ import { AccountModule } from './account/account.module';
     HelpComponent,
     ShortenerComponent,
     HttpResponseModalComponent,
-    HelpModalComponent,
-    LoginReminderModalComponent,
+    HelpModalComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +44,7 @@ import { AccountModule } from './account/account.module';
   ],
   entryComponents: [
     HttpResponseModalComponent,
-    HelpModalComponent,
-    LoginReminderModalComponent,
-  ],
+    HelpModalComponent  ],
   providers: [ApiService],
   bootstrap: [AppComponent],
 })
