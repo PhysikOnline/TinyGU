@@ -23,7 +23,8 @@
 language: node_js
 
 node_js:
-   - node # will use latest node
+  - 9
+   # - node # will use latest node
 
 branches:
     except:
