@@ -18,28 +18,28 @@ https://material.angular.io/components/sidenav/examples
 
   <mat-sidenav-content>
     <img src="assets/goethe_head_blue.svg" id="goethe-head">
-  <!-- flex-layout docu: https://github.com/angular/flex-layout/wiki/Declarative-API-Overview/c080d0b5d567aeb8dbafbd8a3ff3c23be8f16882 -->
-  <!-- fxFlex  = flex-grow, flex-shrink, flex-basis -->
-  <!-- flexbox tutorial: http://www.on-design.de/tutor/html5_css3/css3/flexbox.html -->
-  <!-- flex basis detailed tut: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis -->
-  <div fxLayout="column">
-    <!--id="goethe-head">-->
-    <!--<div>-->
-    <app-toolbar (sideNavOpen)="start.open()"></app-toolbar>
-    <!--</div>-->
 
-    <!--<div fxFlexFill>-->
-    <router-outlet></router-outlet>
-    <!--</div>-->
+    <!-- flex-layout docu: https://github.com/angular/flex-layout/wiki/Declarative-API-Overview/c080d0b5d567aeb8dbafbd8a3ff3c23be8f16882 -->
+    <!-- fxFlex  = flex-grow, flex-shrink, flex-basis -->
+    <!-- flexbox tutorial: http://www.on-design.de/tutor/html5_css3/css3/flexbox.html -->
+    <!-- flex basis detailed tut: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis -->
 
-    <!--<div fxFlex="1 0 max-content"></div>-->
-    <!--<div fxFill></div>-->
+    <div class="sidenav-content-grid"><!-- fxLayout="column">
 
-    <!--<div fxFlex>-->
-    <app-footer></app-footer>
-    <!--</div>-->
+      <!--id="goethe-head">-->
+      <div class="header">
+        <app-toolbar (sideNavOpen)="start.open()"></app-toolbar>
+      </div>
 
-  </div>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="footer">
+        <app-footer></app-footer>
+      </div>
+
+    </div>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

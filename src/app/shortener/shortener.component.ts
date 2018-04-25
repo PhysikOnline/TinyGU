@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input, ElementRef, ViewChild } from '@angular/core';
 import {
   trigger,
   state,
@@ -59,6 +59,7 @@ const GOETHE_URL_REGEX = new RegExp(
 );
 // const COMBINED_URL_REGEX = new RegExp(URL_REGEX.source + GOETHE_URL_REGEX.source);
 
+// ensures, that errors are triggered imideately
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -75,22 +76,30 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
       transition(':enter', useAnimation(bounceIn)),
       transition('void => *', useAnimation(bounceOut)),
     ]),
-    trigger('error', [transition('* => *', useAnimation(shake))]),
+    trigger('error', [
+      state('false, true', style({})),
+      transition('false => true', useAnimation(shake))
+    ]),
   ],
 })
+
 export class ShortenerComponent implements OnInit {
   constructor(public dialog: MatDialog, private api: ApiService) {}
 
-  moreOptions = false;
-  inputURL = '';
-  shortURL = '';
-  loggedInVar = true; // TODO set false
+  @ViewChild('invisibleText') invTextER: ElementRef;
+
+  onAddErrAnim: boolean = false;
+  moreOptions: boolean = false;
+  inputURL: string = '';
+  shortURL: string = '';
+  loggedInVar: boolean = true; // TODO set false
   shortenedLinks = [];
   readonly urlName = location.host;
   bounce: any;
+  flexInputWidth: number = 0;
 
   urlFormControl = new FormControl('', [
-    Validators.pattern(URL_REGEX),
+    // Validators.pattern(URL_REGEX), // TODO: causes "[Violation] 'input' handler took 158ms"
     Validators.pattern(GOETHE_URL_REGEX),
   ]);
   // urlFormControl = new FormControl('inputURL', [Validators.pattern(URL_REGEX), Validators.pattern(GOETHE_URL_REGEX)]);
@@ -107,22 +116,36 @@ export class ShortenerComponent implements OnInit {
     console.log($event);
   }
 
+  resizeInput() {
+    // without setTimeout the width gets updated to the previous length
+    setTimeout ( () => {
+
+      const minWidth = 64;
+
+      if (this.invTextER.nativeElement.offsetWidth > minWidth) {
+        this.flexInputWidth = this.invTextER.nativeElement.offsetWidth + 50;
+      } else {
+        this.flexInputWidth = minWidth;
+      }
+
+    }, 0);
+  }
+
   onShorten() {
-    console.log(
-      'urlFormControl -->',
-      !this.urlFormControl.hasError('pattern'),
-      '###################'
-    );
-    console.log(
-      'shortUrlFormControl -->',
-      !this.shortUrlFormControl.hasError('minlength'),
-      '###################'
-    );
+    this.onAddErrAnim = false;
+
+    // the timeout triggers the error animation and sets onAddErrAnim to true after 0 seconds
+    setTimeout( () => {
+      if (this.urlFormControl.invalid) {
+        this.onAddErrAnim = true;
+        return;
+      } else {
+    console.log( 'urlFormControl -->', !this.urlFormControl.hasError('pattern'), '###################' );
+    console.log( 'shortUrlFormControl -->', !this.shortUrlFormControl.hasError('minlength'), '###################' );
     // if the input fields pass the regex checks
     // TODO update shorturl check
     if (
-      !this.urlFormControl.hasError('pattern') &&
-      !this.shortUrlFormControl.hasError('minlength')
+      !this.urlFormControl.hasError('pattern') && !this.shortUrlFormControl.hasError('minlength')
     ) {
       const link = new Link(this.inputURL, this.shortURL, null, null, null);
       let successMessage: string[]; // or any[] to process date?
@@ -157,14 +180,6 @@ export class ShortenerComponent implements OnInit {
           // https://github.com/angular/material2/issues/2031
           // https://github.com/angular/material2/blob/master/src/lib/dialog/dialog.ts#L44
           // https://material.angular.io/components/dialog/overview
-
-          // this.dialog.open(HttpResponseModalComponent, {
-          //   data: { completeMessage: successMessage },
-          // });
-
-          // this.shortenedLinks.push(successMessage);
-
-          // console.log(this.shortenedLinks);
           console.log('<<<<<<<<<<<<<<<<<<<<----complete');
         }
       );
@@ -174,6 +189,8 @@ export class ShortenerComponent implements OnInit {
     } else {
       // TODO input or inputError blinking, vibrating, animation....
     }
+      }
+    }, 0 );
   }
 
   onTest() {

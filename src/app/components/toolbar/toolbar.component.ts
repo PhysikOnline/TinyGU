@@ -51,15 +51,9 @@ export class ToolbarComponent implements OnInit {
         console.log(location.pathname);
         console.log('search(/^/acc/i): ' + location.pathname.search(/^\/acc/i));
         console.log('match(/^/acc/i): ' + location.pathname.match(/^\/acc/i));
-        console.log(
-          "startsWith('/acc'): " + location.pathname.startsWith('/acc')
-        );
-        console.log(
-          "startsWith('/en'): " + location.pathname.startsWith('/en')
-        );
-        console.log(
-          'search(/^/en//i): ' + location.pathname.search(/^\/en\//i)
-        );
+        console.log("startsWith('/acc'): " + location.pathname.startsWith('/acc'));
+        console.log("startsWith('/en'): " + location.pathname.startsWith('/en'));
+        console.log('search(/^/en//i): ' + location.pathname.search(/^\/en\//i));
         console.log('substr: ' + location.pathname.substr(3));
         console.log('cpmlete string: ' + location.pathname);
         break;

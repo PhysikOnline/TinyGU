@@ -1,9 +1,10 @@
 html,
 body {
   //height: 100%;
+  //width: 100vw;
 }
 
-//#goethe-head {
+#goethe-head {
 //  width:100%;
 //  background: url("../assets/goethe_head_blue.svg") no-repeat right; // bottom;
 //  //background-repeat: no-repeat;
@@ -16,7 +17,7 @@ body {
 //  position: absolute;
 //  z-index: -1;
 //  float: right;
-//}
+}
 
 #goethe-head {
   position: fixed;
@@ -49,15 +50,40 @@ body {
   }
 }
 
+// prevents a y scrollbar when using mat-cards
+.mat-drawer-content {
+  overflow: unset;
+}
+
+.sidenav-content-grid {
+  height: 100vh;
+  display: grid;
+  grid-template: // areas       rows        / columns
+"header   header  header"   min-content
+"......   content ......"   1fr
+"footer   footer  footer"   min-content / auto //auto auto // min-content 1fr min-content
+;
+
+  .header {
+    grid-area: header;
+  }
+
+  .content {
+    grid-area: content;
+    //justify-content: right;
+    //justify-self: right;
+    //justify-items: right;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}
+
 ::ng-deep .langSelect div.mat-select-arrow-wrapper {
-  display: none;
+  //  display: none;
 }
 
 ::ng-deep .langSelect.mat-select {
-  display: inline;
-}
-
-// prevents a y scrollbar when using mat-cards
-.mat-drawer-content {
-  //overflow: unset;
+  //  display: inline;
 }

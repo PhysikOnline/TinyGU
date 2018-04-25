@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent, HelpModalComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { AboutComponent } from './about/about.component';
-import { AccountComponent } from './account/account.component';
+// import { AccountComponent } from './account/user-account/account.component';
 import { HelpComponent } from './help/help.component';
 import { routing } from './app.routing';
 import { ShortenerComponent } from './shortener/shortener.component';
@@ -18,12 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
 import { LoginReminderModalComponent } from './modal/login-reminder-modal.component';
 import { ComponentsModule } from './components/components.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    AccountComponent,
+    // AccountComponent,
     HelpComponent,
     ShortenerComponent,
     HttpResponseModalComponent,
@@ -41,6 +42,7 @@ import { ComponentsModule } from './components/components.module';
     MatDialogModule,
     HttpClientModule,
     ComponentsModule,
+    AccountModule
   ],
   entryComponents: [
     HttpResponseModalComponent,
