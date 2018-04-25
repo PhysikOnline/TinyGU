@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpResponseModalComponent } from './modal/http-response-modal.component';
 import { ComponentsModule } from './components/components.module';
 import { AccountModule } from './account/account.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AccountModule } from './account/account.module';
     HelpComponent,
     ShortenerComponent,
     HttpResponseModalComponent,
-    HelpModalComponent
+    HelpModalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { AccountModule } from './account/account.module';
     AccountModule
   ],
   entryComponents: [
+    LoginComponent,
     HttpResponseModalComponent,
     HelpModalComponent  ],
   providers: [ApiService],

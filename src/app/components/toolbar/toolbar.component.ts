@@ -3,6 +3,7 @@ import { stringify } from 'querystring';
 import { APP_BASE_HREF } from '@angular/common';
 import { MatDialog } from '@angular/material';
 import { HelpModalComponent } from '../../app.component';
+import { LoginComponent } from '../../login/login.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -88,5 +89,9 @@ export class ToolbarComponent implements OnInit {
 
   openHelpAsModal() {
     this.dialog.open(HelpModalComponent);
+  }
+
+  openLoginAsModal() {
+    this.dialog.open(LoginComponent);
   }
 }

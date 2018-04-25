@@ -15,7 +15,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Link, LinkAPImodel } from '../models/link';
 import { HttpResponseModalComponent } from '../modal/http-response-modal.component';
-import { LoginReminderModalComponent } from '../modal/login-reminder-modal.component';
 import {
   bounceIn,
   bounceOut,
@@ -183,9 +182,6 @@ export class ShortenerComponent implements OnInit {
           console.log('<<<<<<<<<<<<<<<<<<<<----complete');
         }
       );
-      if (!this.loggedInVar) {
-        this.dialog.open(LoginReminderModalComponent);
-      }
     } else {
       // TODO input or inputError blinking, vibrating, animation....
     }

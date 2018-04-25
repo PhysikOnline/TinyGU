@@ -84,3 +84,4 @@ export class AppComponent {
   styleUrls: ['./help/help.component.scss'],
 })
 export class HelpModalComponent {}
+
