@@ -1,6 +1,26 @@
-<mat-list>
-  <h3 mat-subheader>Mit diesem URL shortener lassen sich ausschließlich URLs der Goethe Universität kürzen. Dazu gehören folgende Domains:</h3>
-  <mat-dialog-content>
-      Hello sucker!!!
-  </mat-dialog-content>
-</mat-list>
+<h2 mat-header>Login</h2>
+  <mat-form-field class="input-form-field">
+    <input class="input-field" 
+            matInput type="email" 
+            placeholder="E-Mail" 
+            [formControl]="email" 
+            required>
+    <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input-form-field">
+    <input class="input-field" 
+            matInput 
+            type="password" 
+            placeholder="Password"
+            [formControl]="password"
+            required>
+    <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary">Login</button>
+    <button mat-raised-button color="accent">Register</button>
+  </div>
+
+
