@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    trigger('slide', [
+      state('left', style({ transform: 'translateX(0)' })),
+      state('right', style({ transform: 'translateX(-50%)' })),
+      transition('* => *', animate(300))
+    ])
+  ]
 })
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('');
+  activePane = 'left';
 
   constructor() { }
 
@@ -33,5 +42,13 @@ export class LoginComponent implements OnInit {
     }
 
     return errorMessage;
+  }
+
+  changeActivePane() {
+    if (this.activePane === 'left') {
+      this.activePane = 'right';
+    } else {
+      this.activePane = 'left';
+    }
   }
 }

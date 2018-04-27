@@ -1,26 +1,38 @@
-<h2 mat-header>Login</h2>
-  <mat-form-field class="input-form-field">
-    <input class="input-field" 
-            matInput type="email" 
-            placeholder="E-Mail" 
-            [formControl]="email" 
-            required>
-    <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
-  </mat-form-field>
+<div class="planes" [@slide]="activePane">
 
-  <mat-form-field class="input-form-field">
-    <input class="input-field" 
-            matInput 
-            type="password" 
-            placeholder="Password"
-            [formControl]="password"
-            required>
-    <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
-  </mat-form-field>
-
-  <div class="buttons">
-    <button mat-raised-button color="primary">Login</button>
-    <button mat-raised-button color="accent">Register</button>
+  <div>
+    <mat-form-field class="input-form-field">
+      <input class="input-field" 
+              matInput type="email" 
+              placeholder="E-Mail" 
+              [formControl]="email" 
+              required>
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="input-form-field">
+      <input class="input-field" 
+              matInput 
+              type="password" 
+              placeholder="Password"
+              [formControl]="password"
+              required>
+      <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+    <div class="buttons">
+      <button mat-raised-button color="primary">Login</button>
+      <button mat-raised-button color="accent" (click)="changeActivePane()">Register</button>
+    </div>
   </div>
+
+  <div>
+    <h1>Hello there</h1>
+    <button mat-raised-button color="accent" (click)="changeActivePane()">Go Back</button>
+  </div>
+
+</div>
+
+
 
 
